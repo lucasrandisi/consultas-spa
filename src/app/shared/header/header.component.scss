@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    padding: 1em;
+    img {
+        width: 15%;
+    }
+    p {
+        color: #FFFFFF;
+        font-size: 35px;
+        margin: 0 0 0 1em;
+    }
+}
+
+@media (max-width: 900px){
+    .header p {
+        font-size: 15px;
+    }
+}
