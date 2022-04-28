@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { Materias } from './Materias';
 
 @Component({
   selector: 'app-listar-materias',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarMateriasComponent implements OnInit {
 
-  constructor() { }
+  materias: Materias[] = [];
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+      this.get_materias();
   }
 
+  get_materias(){
+      this.http.get(`${environment.apiUrl}/materias`,{
+        params: {
+        }
+  }).subscribe((response:any)=>{
+    console.log(response)
+      this.materias = [];
+      for(let materia of response){
+          this.materias.push(
+              new Materias(materia.id,materia.name)
+          );
+      }
+  }
+  )
+  }
 }
