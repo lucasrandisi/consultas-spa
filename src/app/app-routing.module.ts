@@ -9,6 +9,10 @@ const routes: Routes = [
 	{
 		path: 'materias',
 		loadChildren: () => import('./materias/materias.module').then(m => m.MateriasModule),
+	},
+	{
+		path: 'horarios',
+		loadChildren: () => import('./horarios/horarios.module').then(m => m.HorariosModule),
 	}
 ];
 
