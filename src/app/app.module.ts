@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HeaderComponent } from './shared/header/header.component';
 import { httpInterceptorProviders } from './shared/interceptors/http-interceptor-provider';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,8 @@ import { httpInterceptorProviders } from './shared/interceptors/http-interceptor
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		HttpClientModule
 	],
 	providers: [
 		httpInterceptorProviders,
