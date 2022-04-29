@@ -4,7 +4,7 @@
 
 export const environment = {
 	production: false,
-	apiUrl: 'http://api.consultas-frro/api'
+	apiUrl: 'http://api.consultas-frro.tk/api'
 };
 
 /*
