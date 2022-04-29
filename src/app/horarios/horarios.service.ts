@@ -9,72 +9,88 @@ export class HorariosService {
 
   constructor() { }
 
+  // TODO: consumir api cuando haya datos reales
   getHorarios(): Observable<Horarios[]> {
     return of([
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 1,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 2,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 3,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 4,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 5,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 6,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 7,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 8,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 9,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       },
       {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
-      },
-      {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
-      },
-      {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
-      },
-      {
-        fecha: '12/04 18:00',
-        profesor: 'Julio profe',
-        esPresencial: true
+        id: 10,
+        user_id: 1,
+        materia_id: 1,
+        dia: '18/04',
+        hora: '18:00',
+        profesor: 'julio profe'
       }
     ])
   }

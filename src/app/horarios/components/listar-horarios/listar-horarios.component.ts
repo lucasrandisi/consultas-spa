@@ -9,7 +9,7 @@ import { HorariosService } from '../../horarios.service';
 })
 export class ListarHorariosComponent implements OnInit {
 
-  displayedColumns: string[] = ['fecha', 'profesor', 'presencial/virtual', 'accion'];
+  displayedColumns: string[] = ['dia', 'hora', 'profesor', 'accion'];
   horarios: Horarios[] = [];
 
   constructor(private horariosService: HorariosService) { }

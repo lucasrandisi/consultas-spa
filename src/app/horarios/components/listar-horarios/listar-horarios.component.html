@@ -1,17 +1,17 @@
 <p>Listado de horarios disponibles</p>
 <div class="container">
   <table mat-table [dataSource]="horarios" *ngIf="horarios">
-    <ng-container matColumnDef="fecha">
-      <th mat-header-cell *matHeaderCellDef> Fecha </th>
-      <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+    <ng-container matColumnDef="dia">
+      <th mat-header-cell *matHeaderCellDef> Dia </th>
+      <td mat-cell *matCellDef="let element"> {{element.dia}} </td>
+    </ng-container>
+    <ng-container matColumnDef="hora">
+      <th mat-header-cell *matHeaderCellDef> Hora </th>
+      <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
     </ng-container>
     <ng-container matColumnDef="profesor">
       <th mat-header-cell *matHeaderCellDef> Profesor </th>
       <td mat-cell *matCellDef="let element"> {{element.profesor}} </td>
-    </ng-container>
-    <ng-container matColumnDef="presencial/virtual">
-      <th mat-header-cell *matHeaderCellDef> Presencial/Virtual </th>
-      <td mat-cell *matCellDef="let element"> {{element.esPresencial}} </td>
     </ng-container>
     <ng-container matColumnDef="accion">
       <th mat-header-cell *matHeaderCellDef class="center"> Accion </th>
