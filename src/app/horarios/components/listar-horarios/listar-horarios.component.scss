@@ -21,3 +21,9 @@ p {
 table {
     width: 50%;
 }
+
+@media (max-width: 680px) {
+    table {
+        width: 100%;
+    }
+}
