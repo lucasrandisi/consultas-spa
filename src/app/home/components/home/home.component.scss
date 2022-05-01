@@ -1,0 +1,29 @@
+.rectangle{
+    width: 850px;
+    height: 550px;
+    background-color: #DBDBDB;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.mat-raised-button{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 75px;
+}
+
+.mat-primary {
+    background-color: #5FA1BD;
+}
+
