@@ -1,4 +1,5 @@
-.main {
-	height: 100vh;
-
+:host {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
