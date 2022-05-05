@@ -1,0 +1,29 @@
+.text-header {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 1em;
+}
+
+.inscription-form, .inscription-full-width {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+:host::ng-deep {
+    .action-buttons {
+        display: flex;
+        justify-content: space-evenly;
+        .mat-primary {
+            background-color: #5FA1BD;
+        }
+    }
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+        border-radius: 10px;
+    }
+    .mat-form-field-underline {
+        display: none;
+    }
+    .mat-form-field.mat-focused .mat-form-field-label {
+        color: #5FA1BD;
+    }
+}
