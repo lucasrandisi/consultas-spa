@@ -1,0 +1,22 @@
+<p class="text-header">
+    <b>Usted ha elegido inscribirse a la hora de consulta de la MATERIA dictada por el PROFESOR</b>
+</p>
+<div>
+    <p>Para finalizar ingrese su email</p>
+    <form class="inscription-form">
+        <mat-form-field class="inscription-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" placeholder="Ej. ejemplo@gmail.com">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Por favor ingrese un email válido
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            El email es <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+    </form>
+    <div class="action-buttons">
+        <button mat-raised-button color="primary" (click)="closeDialog()">Cancelar</button>
+        <button mat-raised-button color="primary">Aceptar</button>
+    </div>
+</div>
