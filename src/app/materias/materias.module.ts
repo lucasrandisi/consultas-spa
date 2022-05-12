@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { MateriasRoutingModule } from './materias-routing.module';
 import { ListarMateriasComponent } from './components/listar-materias/listar-materias.component';
 
+import {MatTableModule} from '@angular/material/table';
+
+
+
 
 @NgModule({
   declarations: [
@@ -11,7 +15,8 @@ import { ListarMateriasComponent } from './components/listar-materias/listar-mat
   ],
   imports: [
     CommonModule,
-    MateriasRoutingModule
+    MateriasRoutingModule,
+    MatTableModule
   ]
 })
 export class MateriasModule { }

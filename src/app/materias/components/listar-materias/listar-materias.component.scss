@@ -1,12 +1,20 @@
 .title{
     font-size: 40px;
-    margin-top: 4vw;
-    margin-left: 17vw;
+    margin-top: 3vw;
+    margin-left: 24vw;
 }
 .searcher{
     margin-left: 50vw;
 }
 .list{
-    margin-left: 17vw
+    margin-left: 20vw
 }
-
+.Conteiner-List{
+    background-color: rgb(237, 243, 242);
+    padding: 1%;
+    color: black;
+    overflow: auto;
+    height: 64vh;
+    width: 51vw;
+    margin-left: 45vh ;
+}
