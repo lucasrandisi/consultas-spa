@@ -8,13 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { httpInterceptorProviders } from './shared/interceptors/http-interceptor-provider';
 import { HttpClientModule } from '@angular/common/http';
-import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		HeaderComponent,
-  RegistroComponent
+		HeaderComponent
 	],
 	imports: [
 		BrowserModule,
