@@ -15,8 +15,8 @@ const routes: Routes = [
 		loadChildren: () => import('./horarios/horarios.module').then(m => m.HorariosModule),
 	},
 	{
-		path: 'register',
-		loadChildren: () => import('./registro/registro.module').then(m => m.RegistroModule),
+		path: 'login',
+		loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
 	},
 ];
 

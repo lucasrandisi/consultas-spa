@@ -1,0 +1,55 @@
+:host {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.full-width{
+	width: 85%;
+	margin: auto;
+	display: block;
+	color: black;
+	&:first-of-type {
+		margin-bottom: 5vh;
+		margin-top: 11vh;
+	}
+	
+}
+
+::ng-deep .create-account-form {
+
+	.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+		background-color: red!important;
+	}
+	.mat-focused .mat-form-field-ripple {
+	  /*change color of underline when focused*/
+	  background-color: blue ;
+	}
+	.mat-focused .mat-form-field-label {
+	  /*change color of label when focused*/
+	  color: black ;
+	 }
+	 
+	
+  }
+
+.rectangle{
+	background-color: #DBDBDB;
+	height: 500px;
+	width: 600px;
+	border-radius: 12px;
+}
+
+.mat-raised-button{
+	width: 100%;
+	height: 50px;
+	margin-top: 5vh;
+}
+
+.container{
+	width: 85%;
+	margin: auto;
+	display: block;
+}
