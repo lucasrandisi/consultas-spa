@@ -7,14 +7,34 @@
     margin-left: 50vw;
 }
 .list{
-    margin-left: 20vw
+    background-color: rgb(49, 45, 45);
+    color: white;
+    font-size: xx-large;
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr ;
 }
 .Conteiner-List{
     background-color: rgb(237, 243, 242);
+    display: flex;
+    flex-direction: column;
     padding: 1%;
-    color: black;
     overflow: auto;
-    height: 64vh;
+    height: 66vh;
     width: 51vw;
     margin-left: 45vh ;
+}
+.materia{
+    margin-left: 18vh;
+    margin-top: 3.7vh;
+}
+.button{
+    margin-left: 14vh;
+    margin-top: 2.6vh;
+}
+.left{
+    height: 10vh;
+}
+.right{
+    height: 10vh;
 }

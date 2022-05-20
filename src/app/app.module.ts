@@ -8,25 +8,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { httpInterceptorProviders } from './shared/interceptors/http-interceptor-provider';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { FilterPipe } from './materias/components/listar-materias/pipe';
 import { MatTableModule } from '@angular/material/table'
 import {MatSortModule} from '@angular/material/sort';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		HeaderComponent,
-		FilterPipe
+		HeaderComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
-		FormsModule,
 		MatTableModule,
-		MatSortModule
+		MatSortModule,
+		MatAutocompleteModule,
+		ReactiveFormsModule
 	],
 	providers: [
 		httpInterceptorProviders,

@@ -5,7 +5,8 @@ import { MateriasRoutingModule } from './materias-routing.module';
 import { ListarMateriasComponent } from './components/listar-materias/listar-materias.component';
 
 import {MatTableModule} from '@angular/material/table';
-
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -16,7 +17,9 @@ import {MatTableModule} from '@angular/material/table';
   imports: [
     CommonModule,
     MateriasRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatAutocompleteModule,
+    MatButtonModule
   ]
 })
 export class MateriasModule { }
