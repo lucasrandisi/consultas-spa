@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class LoginComponent implements OnInit {
 
   credentials: any = {}
-  loggedIn: Boolean;
+
 
 
   constructor(private authService: AuthService) { }
@@ -19,8 +19,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authService.login(this.credentials).subscribe({
-      next: response => {console.log(response);
-                          this.loggedIn = true;},
+      next: response => {console.log(response);},
       error: error => console.log(error)
     })
   }

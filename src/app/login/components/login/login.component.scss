@@ -18,19 +18,14 @@
 	
 }
 
+
+
+
 ::ng-deep .create-account-form {
 
-	.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-		background-color: red!important;
+	.mat-form-field-appearance-fill .mat-form-field-flex{
+		background-color: white;
 	}
-	.mat-focused .mat-form-field-ripple {
-	  /*change color of underline when focused*/
-	  background-color: blue ;
-	}
-	.mat-focused .mat-form-field-label {
-	  /*change color of label when focused*/
-	  color: black ;
-	 }
 	 
 	
   }
