@@ -4,6 +4,11 @@ import { CommonModule } from '@angular/common';
 import { MateriasRoutingModule } from './materias-routing.module';
 import { ListarMateriasComponent } from './components/listar-materias/listar-materias.component';
 
+import {MatTableModule} from '@angular/material/table';
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 @NgModule({
   declarations: [
@@ -11,7 +16,10 @@ import { ListarMateriasComponent } from './components/listar-materias/listar-mat
   ],
   imports: [
     CommonModule,
-    MateriasRoutingModule
+    MateriasRoutingModule,
+    MatTableModule,
+    MatAutocompleteModule,
+    MatButtonModule
   ]
 })
 export class MateriasModule { }

@@ -1,18 +1,23 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Materias } from './Materias';
+import { Materia } from './Materia';
+
+
 
 @Component({
   selector: 'app-listar-materias',
   templateUrl: './listar-materias.component.html',
   styleUrls: ['./listar-materias.component.scss']
 })
-export class ListarMateriasComponent implements OnInit {
 
-  materias: Materias[] = [];
+export class ListarMateriasComponent implements OnInit {
+  filterPost = '';
+  materias: Materia[] = [];
 
   constructor(private http: HttpClient) { }
+
+
 
   ngOnInit(): void {
       this.get_materias();
@@ -22,15 +27,17 @@ export class ListarMateriasComponent implements OnInit {
       this.http.get(`${environment.apiUrl}/materias`,{
         params: {
         }
-  }).subscribe((response:any)=>{
-    console.log(response)
-      this.materias = [];
-      for(let materia of response){
-          this.materias.push(
-              new Materias(materia.id,materia.name)
-          );
-      }
-  }
+    }).subscribe((response:any)=>{
+      console.log(response)
+        this.materias = [];
+        for(let materia of response){
+            this.materias.push(
+                new Materia(materia.id,materia.name)
+            );
+        }
+    }
   )
-  }
+  };
+  
+
 }

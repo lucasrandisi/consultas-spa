@@ -1,4 +1,4 @@
-export class Materias{
+export class Materia{
     id: number;
     name: string;
 

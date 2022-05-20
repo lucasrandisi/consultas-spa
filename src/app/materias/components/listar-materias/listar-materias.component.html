@@ -2,24 +2,22 @@
     Listado de Materias
 </h2>
 
-<div class="searcher">
-    BUSCADOR
-</div>
-<div class="list">
-    <thead>
-        <tr>
-            <th>
-                <h2>Materia</h2>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let materia of materias">
-            <td>{{materia.name}}</td>
-        </tr>
-    </tbody>
-    ee
-</div>
+<input type="text" class="searcher" placeholder="Search..."  >
+
+
+<div class="Conteiner-List"> 
+  <div class="list" *ngFor="let materia of materias ">
+     <div class="left">
+       <div class="materia">{{materia.name}}</div>
+      </div>
+     <div class="right"><button class="button" mat-flat-button color="primary">Primary</button></div>
     
+  </div>
+</div>
 
 
+
+  
+  
+
+  
