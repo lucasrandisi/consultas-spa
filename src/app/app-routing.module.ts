@@ -13,7 +13,11 @@ const routes: Routes = [
 	{
 		path: 'horarios',
 		loadChildren: () => import('./horarios/horarios.module').then(m => m.HorariosModule),
-	}
+	},
+	{
+		path: 'login',
+		loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+	},
 ];
 
 @NgModule({
