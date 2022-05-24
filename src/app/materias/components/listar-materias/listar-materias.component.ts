@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Materia } from './Materia';
 
@@ -15,7 +16,7 @@ export class ListarMateriasComponent implements OnInit {
   filterPost = '';
   materias: Materia[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: Router) { }
 
 
 
@@ -39,5 +40,8 @@ export class ListarMateriasComponent implements OnInit {
   )
   };
   
+  verHorarios(id: number): void {
+    this.route.navigate([ 'horarios' ], { queryParams: { id } })
+  }
 
 }

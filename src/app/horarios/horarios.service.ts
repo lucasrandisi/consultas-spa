@@ -11,7 +11,7 @@ export class HorariosService {
 
   constructor(private http: HttpClient) { }
 
-  getHorarios(): Observable<Horarios[]> {
-    return this.http.get<Horarios[]>(`${environment.apiUrl}/horarios-consulta`);
+  getHorarios(idMateria: number): Observable<Horarios[]> {
+    return this.http.get<Horarios[]>(`${environment.apiUrl}/horarios-consulta?filters[materia_id]=${idMateria}`);
   }
 }
