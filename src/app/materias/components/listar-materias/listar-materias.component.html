@@ -1,12 +1,21 @@
-<h2 class="title">
+
+<div class="header">
+  <button class="buttonback" mat-flat-button color="primary" onclick="">Volver</button>
+  <h2 class="title">
     Listado de Materias
-</h2>
+  </h2>
+</div>
 
-<input type="text" class="searcher" placeholder="Search..."  >
 
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Buscar materia</mat-label>
+    <input matInput type="text" class="searcher"  [(ngModel)]="filterMateria" name="filterMateria" >
+  </mat-form-field>
+</form>
 
 <div class="Conteiner-List"> 
-  <div class="list" *ngFor="let materia of materias ">
+  <div class="list" *ngFor="let materia of materias | filter:filterMateria">
      <div class="left">
        <div class="materia">{{materia.name}}</div>
       </div>

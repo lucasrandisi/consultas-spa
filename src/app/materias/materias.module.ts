@@ -4,22 +4,29 @@ import { CommonModule } from '@angular/common';
 import { MateriasRoutingModule } from './materias-routing.module';
 import { ListarMateriasComponent } from './components/listar-materias/listar-materias.component';
 
-import {MatTableModule} from '@angular/material/table';
-import { MatAutocompleteModule } from "@angular/material/autocomplete";
+
+import { FilterPipe } from './pipes/filter.pipe';
+
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 
 @NgModule({
   declarations: [
-    ListarMateriasComponent
+    ListarMateriasComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
     MateriasRoutingModule,
-    MatTableModule,
-    MatAutocompleteModule,
-    MatButtonModule
+		MatButtonModule,
+		FormsModule,
+		MatFormFieldModule,
+		MatInputModule
   ]
 })
 export class MateriasModule { }
