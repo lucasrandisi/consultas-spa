@@ -1,23 +1,26 @@
-<h2 class="title">
-    Listado de Materias
-</h2>
-
-<input type="text" class="searcher" placeholder="Search..."  >
-
-
-<div class="Conteiner-List"> 
-  <div class="list" *ngFor="let materia of materias ">
-     <div class="left">
-       <div class="materia">{{materia.name}}</div>
-      </div>
-     <div class="right"><button class="button" mat-flat-button color="primary" (click)="verHorarios(materia.id)">Ver horarios</button></div>
-    
-  </div>
+<div class="header">
+	<a [routerLink]="['/']">
+		<button class="buttonback" mat-flat-button color="primary" onclick="">Volver</button>
+	</a>
+	<h2 class="title">
+		Listado de Materias
+	</h2>
 </div>
 
 
+<form class="example-form">
+	<mat-form-field class="example-full-width" appearance="fill">
+		<mat-label>Buscar materia</mat-label>
+		<input matInput type="text" class="searcher" [(ngModel)]="filterMateria" name="filterMateria">
+	</mat-form-field>
+</form>
 
-  
-  
+<div class="Conteiner-List">
+	<div class="list" *ngFor="let materia of materias | filter:filterMateria">
+		<div class="left">
+			<div class="materia">{{materia.name}}</div>
+		</div>
+		<div class="right"><button class="button" mat-flat-button color="primary">Primary</button></div>
 
-  
+	</div>
+</div>

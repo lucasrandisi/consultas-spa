@@ -13,7 +13,9 @@ import { Materia } from './Materia';
 })
 
 export class ListarMateriasComponent implements OnInit {
-  filterPost = '';
+
+  filterMateria = '';
+  
   materias: Materia[] = [];
 
   constructor(private http: HttpClient, private route: Router) { }

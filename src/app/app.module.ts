@@ -10,8 +10,10 @@ import { httpInterceptorProviders } from './shared/interceptors/http-interceptor
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table'
 import {MatSortModule} from '@angular/material/sort';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 @NgModule({
 	declarations: [
@@ -25,7 +27,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 		HttpClientModule,
 		MatTableModule,
 		MatSortModule,
-		MatAutocompleteModule,
 		ReactiveFormsModule
 	],
 	providers: [
