@@ -9,7 +9,15 @@ const routes: Routes = [
 	{
 		path: 'materias',
 		loadChildren: () => import('./materias/materias.module').then(m => m.MateriasModule),
-	}
+	},
+	{
+		path: 'horarios',
+		loadChildren: () => import('./horarios/horarios.module').then(m => m.HorariosModule),
+	},
+	{
+		path: 'login',
+		loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+	},
 ];
 
 @NgModule({
