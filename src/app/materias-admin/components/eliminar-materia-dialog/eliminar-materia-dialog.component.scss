@@ -1,0 +1,15 @@
+.text {
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3em;
+    .mat-primary {
+        background-color: #5FA1BD;
+    }
+}

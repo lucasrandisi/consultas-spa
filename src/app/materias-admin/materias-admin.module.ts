@@ -8,10 +8,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EliminarMateriaDialogComponent } from './components/eliminar-materia-dialog/eliminar-materia-dialog.component';
 
 @NgModule({
   declarations: [
-    ListadoMateriasComponent
+    ListadoMateriasComponent,
+    EliminarMateriaDialogComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +22,8 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MateriasAdminRoutingModule
+    MateriasAdminRoutingModule,
+    MatDialogModule
   ]
 })
 export class MateriasAdminModule { }
