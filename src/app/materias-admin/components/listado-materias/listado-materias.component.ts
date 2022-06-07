@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Materia } from 'src/app/materias/components/listar-materias/Materia';
+import { ListadoMateriasService } from './listado-materias.service';
 
 @Component({
   selector: 'app-listado-materias',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoMateriasComponent implements OnInit {
 
-  constructor() { }
+  filterMateria = '';
+  
+  materias: Materia[] = [];
+
+  constructor(private serviceMaterias: ListadoMateriasService) { }
 
   ngOnInit(): void {
+    this.serviceMaterias.getAllMaterias().subscribe(materias => {
+      this.materias = materias;
+    });
   }
 
 }
