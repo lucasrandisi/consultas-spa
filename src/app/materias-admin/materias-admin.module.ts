@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MateriasAdminRoutingModule } from './materias-admin-routing.module';
-import { FilterPipe } from '../materias/pipes/filter.pipe';
 import { ListadoMateriasComponent } from './components/listado-materias/listado-materias.component';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -12,8 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
-    ListadoMateriasComponent,
-    FilterPipe
+    ListadoMateriasComponent
   ],
   imports: [
     CommonModule,
