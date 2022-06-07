@@ -18,6 +18,10 @@ const routes: Routes = [
 		path: 'login',
 		loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
 	},
+	{
+		path: 'admin-materias',
+		loadChildren: () => import('./materias-admin/materias-admin.module').then(m => m.MateriasAdminModule),
+	},
 ];
 
 @NgModule({

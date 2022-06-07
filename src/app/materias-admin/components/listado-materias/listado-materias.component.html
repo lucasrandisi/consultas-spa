@@ -1,0 +1,35 @@
+<div class="header">
+	<a [routerLink]="['/']">
+		<button class="buttonback" mat-flat-button color="primary" onclick="">Volver</button>
+	</a>
+	<h2 class="title">
+		Listado de Materias de Administrador
+	</h2>
+</div>
+
+<div class="container-filters">
+	<form class="example-form">
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Buscar materia</mat-label>
+			<input matInput type="text" class="searcher" [(ngModel)]="filterMateria" name="filterMateria">
+		</mat-form-field>
+	</form>
+	<button class="button" mat-flat-button color="primary">Agregar materia</button>
+</div>
+
+
+<div class="Conteiner-List">
+	<div class="list" *ngFor="let materia of materias">
+		<div class="left">
+			<div class="materia">{{materia.name}}</div>
+		</div>
+		<div class="right">
+			<button
+				class="button"
+				mat-flat-button color="primary"
+				(click)="openDeleteDialog(materia.id, materia.name)">
+				Eliminar
+			</button>
+		</div>
+	</div>
+</div>
