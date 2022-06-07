@@ -12,6 +12,6 @@ export class ListadoMateriasService {
   constructor(private http: HttpClient) { }
 
   getAllMaterias(): Observable<Materia[]> {
-    return this.http.get<Materia[]>(`${environment.apiUrl}/horarios-consulta?materias`);
+    return this.http.get<Materia[]>(`${environment.apiUrl}/materias`);
   }
 }
