@@ -33,7 +33,7 @@ export class ListadoComponent implements OnInit {
 	}
 
 	getUsuarios() {
-		this.http.get(`${environment.apiUrl}/me`).subscribe((response: any) => {
+		this.http.get(`${environment.apiUrl}/users`).subscribe((response: any) => {
 			console.log(response);
 			this.dataSource = response;
 		}
