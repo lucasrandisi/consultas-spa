@@ -1,0 +1,33 @@
+<div class="header">
+    <a [routerLink]="['/']">
+		<button class="buttonback" mat-flat-button color="primary" onclick="">Volver</button>
+	</a>
+    <H2 class="title">Crear Nuevo Usuario</H2>
+</div>
+
+
+
+<Div class="Conteiner-form">
+    <form  [formGroup]="form" (ngSubmit)="add_user()" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ingresar Nombre</mat-label>
+            <input matInput formControlName="name" type="text" class="searcher" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ingresar Email</mat-label>
+            <input matInput formControlName="email" type="text" class="searcher" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ingresar Rol</mat-label>
+            <input matInput formControlName="rol" type="text" class="searcher" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ingresar Contraseña</mat-label>
+            <input matInput formControlName="password" type="text" class="searcher" >
+        </mat-form-field>
+        <div>
+            <button mat-raised-button class="button" type="submit" >Guardar Usuario</button>
+        </div>
+    </form>
+    
+</Div>
