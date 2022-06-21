@@ -22,11 +22,14 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.credentials).subscribe({
       next: response => {
         console.log(response.user);
-        if(response.user.rol.name == "Profesor"){
+        if(response.user.rol.name == "Alumno"){
           this.router.navigate(['/materias'])
         }
-        if(response.user.rol.name == "Alumno"){
+        if(response.user.rol.name == "Admin"){
           this.router.navigate(['/usuarios']);
+        }
+        if(response.user.rol.name == "Profesor"){
+          this.router.navigate(['/inscripciones'])
         }
       },
       error: error => console.log(error)

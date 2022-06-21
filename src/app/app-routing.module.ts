@@ -7,6 +7,11 @@ const routes: Routes = [
 		loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
 	},
 	{
+		path: 'login',
+		loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+	},
+	// Alumno
+	{
 		path: 'materias',
 		loadChildren: () => import('./materias/materias.module').then(m => m.MateriasModule),
 	},
@@ -14,10 +19,7 @@ const routes: Routes = [
 		path: 'horarios',
 		loadChildren: () => import('./horarios/horarios.module').then(m => m.HorariosModule),
 	},
-	{
-		path: 'login',
-		loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
-	},
+	//Admin
 	{
 		path: 'admin-materias',
 		loadChildren: () => import('./materias-admin/materias-admin.module').then(m => m.MateriasAdminModule),
@@ -26,7 +28,15 @@ const routes: Routes = [
 		path: 'usuarios',
 		loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule),
 	},
-
+	// Profesor
+	{
+		path: 'inscripciones',
+		loadChildren: () => import('./inscripciones/inscripciones.module').then(m => m.InscripcionesModule),
+	},
+	{
+		path: 'horarios-consulta',
+		loadChildren: () => import('./horarios-consulta/horarios-consulta.module').then(m => m.HorariosConsultaModule),
+	}
 ];
 
 @NgModule({

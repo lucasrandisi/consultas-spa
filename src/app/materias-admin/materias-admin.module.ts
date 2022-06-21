@@ -10,13 +10,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EliminarMateriaDialogComponent } from './components/eliminar-materia-dialog/eliminar-materia-dialog.component';
-import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 @NgModule({
   declarations: [
     ListadoMateriasComponent,
-    EliminarMateriaDialogComponent,
-    CrearUsuarioComponent
+    EliminarMateriaDialogComponent
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-listado',
@@ -22,11 +23,12 @@ export class ListadoComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort, {}) sort: MatSort;
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   
      ngOnInit() {
-      this.getUsuarios()
+      this.getUsuarios();
+      console.log(this.authService.accessToken);
   
     }
 

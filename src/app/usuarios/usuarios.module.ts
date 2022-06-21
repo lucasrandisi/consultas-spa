@@ -19,10 +19,12 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 import {MatIcon, MatIconModule} from '@angular/material/icon';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 @NgModule({
   declarations: [
-    ListadoComponent
+    ListadoComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     CommonModule,
