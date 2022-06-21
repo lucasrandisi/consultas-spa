@@ -22,6 +22,11 @@ const routes: Routes = [
 		path: 'admin-materias',
 		loadChildren: () => import('./materias-admin/materias-admin.module').then(m => m.MateriasAdminModule),
 	},
+	{
+		path: 'usuarios',
+		loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule),
+	},
+
 ];
 
 @NgModule({
