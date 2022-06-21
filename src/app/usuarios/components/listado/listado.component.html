@@ -1,33 +1,26 @@
-<mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
+<div class="example-container mat-elevation-z8" >
   
-  <div class="example-container mat-elevation-z8">
+          <mat-table [dataSource]="dataSource" matSort>
+
+            <!--Columna usuario -->
+            <ng-container matColumnDef="usuario">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!--Boton agregar -->
+            <ng-container matColumnDef="agregar">
+              <mat-header-cell *matHeaderCellDef> Agregar </mat-header-cell>
+              <mat-cell *matCellDef="let element" > <button mat-icon-button matTooltip="Clickear para agregar" class="iconbutton"
+                  color="primary">
+                  <mat-icon>done_outline</mat-icon>
+                </button> </mat-cell>
+            </ng-container>
   
-    <mat-table #table [dataSource]="dataSource">
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
   
-      <!--- Note that these columns can be defined in any.
-            The actual rendered columns are set as a property on the row definition" -->
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.position | FilterData}} </mat-cell>
-      </ng-container>
-  
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-      </ng-container>
-  
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-      </ng-container>
-  
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-  </div>
+        </div>

@@ -4,36 +4,42 @@ import { CommonModule } from '@angular/common';
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { ListadoComponent } from './components/listado/listado.component';
 
-import {MatTableDataSource} from '@angular/material/table';
-import {MatTableModule} from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
-
-import {MatNativeDateModule} from '@angular/material/core';
-
-import { OrdinalPipe } from './components/listado/listado.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
+
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+
+import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+import {MatIcon, MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    ListadoComponent,
-    OrdinalPipe
+    ListadoComponent
   ],
   imports: [
     CommonModule,
     UsuariosRoutingModule,
-    MatTableDataSource,
-    MatTableModule,
-    MatFormFieldModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule,
-    BrowserModule
-
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatTableModule,
+    MatTooltipModule,
+    MatTooltipModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatProgressSpinnerModule
   ]
 })
 export class UsuariosModule { }
