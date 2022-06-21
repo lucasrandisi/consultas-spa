@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { switchAll } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Materia } from '../listar-materias/Materia';
 
@@ -26,17 +25,17 @@ export class CrearMateriaComponent implements OnInit {
 
   initializeForm() {
     this.form = new FormGroup({
-        matter: new FormControl()
+        name: new FormControl()
     });
   }
 
   add_matter(){
-    let matter = this.form.value['matter'];
+    let matter = this.form.value['name'];
 
     console.log(this.form.value);
 
     this.http.post(`${environment.apiUrl}/materias`,{
-      name: matter
+      ...this.form.value
   }).subscribe((response:any)=>{
 
     let max=0;
