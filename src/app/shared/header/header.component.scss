@@ -18,10 +18,12 @@
 	}
 	.actions {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		p {
 			font-size: 18px;
+			margin: 0 0 3px 0em;
+			text-align: center;
 		}
 		button {
 			border: 0;
@@ -32,6 +34,9 @@
 		}
 		button:hover {
 			text-decoration: underline;
+		}
+		.botones {
+			margin-right: 2em;
 		}
 	}
 }

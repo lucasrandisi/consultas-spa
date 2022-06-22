@@ -5,7 +5,22 @@
         </a>
         <p>SISTEMAS DE CONSULTAS FRRO</p>
     </div>
-    <div class="actions" *ngIf="authService">
+    <div class="actions" *ngIf="authService.currentUser.name === 'Admin'">
+        <div class="botones">
+            <button routerLink="/usuarios">Usuarios</button>
+            <button routerLink="/admin-materias">Materias</button>
+            <button routerLink="admin-horarios">Horarios</button>
+        </div>
+        <div>
+            <p>{{authService.currentUser.name}}</p>
+            <button (click)="cerrarSesion()">Cerrar sesión</button>
+        </div>
+    </div>
+    <div class="actions" *ngIf="authService.currentUser.name === 'Profesor'">
+        <p>{{authService.currentUser.name}} - </p>
+        <button (click)="cerrarSesion()">Cerrar sesión</button>
+    </div>
+    <div class="actions" *ngIf="authService.currentUser.name === 'Alumno'">
         <p>{{authService.currentUser.name}} - </p>
         <button (click)="cerrarSesion()">Cerrar sesión</button>
     </div>
