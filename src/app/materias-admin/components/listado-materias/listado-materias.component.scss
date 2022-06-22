@@ -3,48 +3,12 @@
     margin-top: 2vw;
     margin-left: 17vw;
 }
-.list{
-    background-color: rgb(49, 45, 45);
-    color: white;
-    font-size: xx-large;
-    border-radius: 7px;
-    display: grid;
-    grid-template-columns: 1.5fr 0.5fr ;
-    border-bottom: 1vh;
-    margin-bottom: 1vh;
-}
-.Conteiner-List{
-    background-color: rgb(189, 190, 190);
+.container {
     display: flex;
-    flex-direction: column;
-    padding: 1%;
-    overflow: auto;
-    height: 60vh;
-    width: 51vw;
-    margin-left: 45vh ;
-}
-.materia{
-    margin-left: 18vh;
-    margin-top: 3.7vh;
-}
-.button{
-    margin-left: 14vh;
-    margin-top: 2.6vh;
-}
-.left{
-    height: 10vh;
-}
-.right{
-    height: 10vh;
-}
-.example-full-width {
-    width: 20vw;
-    background-color: rgb(231, 235, 235);
-}
-.example-form {
-    min-width: 30vh;
-    max-width: 20vh;
-    width: 100%;
+    justify-content: center;
+    .mat-primary {
+        background-color: #5FA1BD;
+    }
 }
 .header{
     display: grid;
@@ -57,7 +21,20 @@
     height: 6.5vh;
 }
 .container-filters {
+    margin-top: 1em;
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
+    align-items: center;
+    .button {
+        background-color: #5FA1BD;
+        margin-left: 3em;
+        height: 45px;
+    }
+}
+
+:host::ng-deep {
+    th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+        width: 400px;
+    }
 }
