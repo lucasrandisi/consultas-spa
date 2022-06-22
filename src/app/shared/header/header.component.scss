@@ -1,13 +1,16 @@
 .header {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	background-color: #000000;
 	padding: 1em;
-
-	img {
-		width: 15%;
+	.logo {
+		display: flex;
+		align-items: center;
 	}
-
+	img {
+		width: 200px
+	}
 	p {
 		color: #FFFFFF;
 		font-size: 2vw;
