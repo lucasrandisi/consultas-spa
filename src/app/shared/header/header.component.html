@@ -5,7 +5,8 @@
         </a>
         <p>SISTEMAS DE CONSULTAS FRRO</p>
     </div>
-    <div>
-        <p>asd</p>
+    <div class="actions" *ngIf="authService">
+        <p>{{authService.currentUser.name}} - </p>
+        <button (click)="cerrarSesion()">Cerrar sesión</button>
     </div>
 </div>
