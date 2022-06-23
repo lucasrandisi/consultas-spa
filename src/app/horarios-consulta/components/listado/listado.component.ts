@@ -14,6 +14,8 @@ export class ListadoComponent implements OnInit {
   displayedColumns: string[] = ['dia', 'hora', 'materia', 'accion'];
   horarios: HorarioProfesor[] = [];
   idProfesor: string;
+  status;
+  errorMessage;
 
   constructor(private route: ActivatedRoute,private http: HttpClient) { }
 
@@ -26,14 +28,27 @@ export class ListadoComponent implements OnInit {
   get_materias_profesor(idProfesor:string){ 
     this.http.get<HorarioProfesor[]>(`${environment.apiUrl}/horarios-consulta?filters[profesor_id]=${idProfesor}`).subscribe(datos => {
       this.horarios = datos;
+      console.log(this.horarios);
     });
   }
   // Falta ver que parametros le envio al delete
   eliminar_materia(idMateria: number) : void{
-    console.log(idMateria);
-    //this.http.delete();
-    
-
+    this.http.delete(`${environment.apiUrl}/horarios-consulta/${idMateria}`).subscribe({
+      next: data => {
+          this.status = 'Eliminado satisfactorio';
+          console.log(this.status);
+          this.refresh();
+      },
+      error: error => {
+          this.errorMessage = error.message;
+          console.error('Hubo un error', error);
+      }
+  });
+  
   }
+
+  refresh(): void {
+    window.location.reload();
+}
 
 }
