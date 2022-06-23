@@ -28,9 +28,10 @@ export class ListadoComponent implements OnInit {
       this.horarios = datos;
     });
   }
-
+  // Falta ver que parametros le envio al delete
   eliminar_materia(idMateria: number) : void{
     console.log(idMateria);
+    //this.http.delete();
     
 
   }
