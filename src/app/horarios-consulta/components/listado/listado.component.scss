@@ -1,9 +1,19 @@
-p {
+.cabecera{
     display: flex;
-    justify-content: center;
-    font-size: 2vw;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+p {
+    justify-content:left;
+    font-size: 2vw;
+    padding-left: 26%;
+}
+.agregar{
+    margin-left: 14%;
+}
+.mat-success {
+    background-color: green;
+    color: #fff;
 }
 
 .container {

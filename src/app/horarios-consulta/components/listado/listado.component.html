@@ -1,4 +1,8 @@
-<p>Listado de horarios disponibles</p>
+<div class="cabecera">
+  <p>Listado de horarios disponibles</p>
+  <button mat-raised-button class="agregar" color="success" routerLink="/">Agregar</button>
+</div>
+
 <div class="container">
   <table mat-table [dataSource]="horarios" *ngIf="horarios">
     <ng-container matColumnDef="dia">

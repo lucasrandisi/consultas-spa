@@ -1,15 +1,21 @@
-.upper {
+.cabecera{
     display: flex;
-    justify-content: center;
-    font-size: 2vw;
     margin-top: 1em;
     margin-bottom: 1em;
-    
 }
-.mat-raised-button{
-    padding-left: 20px;
+p {
+    justify-content:left;
+    font-size: 2vw;
+    padding-left: 30%;
 }
-
+.crear{
+    margin-left: 15%;
+    width: 75px
+}
+.mat-success {
+    background-color: green;
+    color: #fff;
+}
 
 .container {
     display: flex;
