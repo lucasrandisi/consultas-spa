@@ -21,14 +21,12 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit(): void {
     this.idProfesor = this.route.snapshot.paramMap.get('id');
-    console.log(this.idProfesor);
     this.get_materias_profesor(this.idProfesor);
   }
 
   get_materias_profesor(idProfesor:string){ 
     this.http.get<HorarioProfesor[]>(`${environment.apiUrl}/horarios-consulta?filters[profesor_id]=${idProfesor}`).subscribe(datos => {
       this.horarios = datos;
-      console.log(this.horarios);
     });
   }
   // Falta ver que parametros le envio al delete
