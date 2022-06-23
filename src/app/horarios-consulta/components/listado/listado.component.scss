@@ -1,0 +1,29 @@
+p {
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    .center {
+        text-align: center;
+    }
+    .mat-primary {
+        background-color: #5FA1BD;
+    }
+}
+
+table {
+    width: 50%;
+}
+
+@media (max-width: 680px) {
+    table {
+        width: 100%;
+    }
+}
