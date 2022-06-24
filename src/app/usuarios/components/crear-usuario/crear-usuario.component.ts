@@ -21,43 +21,33 @@ export class CrearUsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.initializeForm();
   }
-  
+
   initializeForm() {
     this.form = new FormGroup({
         name: new FormControl(),
         email: new FormControl(),
-        password: new FormControl() ,
-        rolid: new FormControl()
+        password: new FormControl(),
+        rol: new FormControl() 
+        
     });
   }
 
-  add_user(){
+  add_usuario(){
     let name = this.form.value['name'];
     let email = this.form.value['email'];
-    let rolid = this.form.value['rolid'];
     let password = this.form.value['password'];
+    let rol_id = this.form.value['rol'];
 
-    console.log(this.form.value);
 
-    this.http.post(`${environment.apiUrl}/materias`,{
+    this.http.post(`${environment.apiUrl}/users`,{
       name: name,
       email: email,
-      rol: rolid,
-      password: password
+      password: password,
+      rol_id: rol_id,
 
   }).subscribe((response:any)=>{
-
-    let max=0;
-    
-    for(let e of this.usuario){
-      if(e.id > max){
-        max = e.id;
-      }
-    }
-    max = max + 1;
-
     this.usuario.push(
-          new Usuario(max,rolid,name,email,password)
+          new Usuario(rol_id,name,email,password)
     );
   }
 )

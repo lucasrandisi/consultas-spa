@@ -29,8 +29,8 @@ export class CrearMateriaComponent implements OnInit {
     });
   }
 
-  add_matter(){
-    let matter = this.form.value['name'];
+  add_materia(){
+    let materia = this.form.value['name'];
 
     console.log(this.form.value);
 
@@ -48,7 +48,7 @@ export class CrearMateriaComponent implements OnInit {
     max = max + 1;
 
     this.materia.push(
-          new Materia(max,matter)
+          new Materia(max,materia)
     );
   }
 )}

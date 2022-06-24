@@ -1,29 +1,29 @@
-<div class="header">
-    <a [routerLink]="['/']">
-		<button class="buttonback" mat-flat-button color="primary" onclick="">Volver</button>
-	</a>
-    <H2 class="title">Crear Nuevo Usuario</H2>
-</div>
+<p>Crear Nuevo Usuario</p>
 
 
 
 <Div class="Conteiner-form">
-    <form  [formGroup]="form" (ngSubmit)="add_user()" class="example-form">
+    <form  [formGroup]="form" (ngSubmit)="add_usuario()" class="example-form">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Ingresar Nombre</mat-label>
             <input matInput formControlName="name" type="text" class="searcher" >
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Ingresar Email</mat-label>
-            <input matInput formControlName="email" type="text" class="searcher" >
+            <input matInput formControlName="email" type="email" class="searcher" >
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Ingresar Rol</mat-label>
-            <input matInput formControlName="rol" type="text" class="searcher" >
+            <mat-label>Seleccionar Rol</mat-label>
+            <select matNativeControl formControlName="rol" required>
+                <option value="" selected></option>
+                <option value="1" >Admin</option>
+                <option value="2">Profesor</option>
+                <option value="3">Alumno</option>
+              </select>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Ingresar Contraseña</mat-label>
-            <input matInput formControlName="password" type="text" class="searcher" >
+            <input matInput formControlName="password" type="password" class="searcher" >
         </mat-form-field>
         <div>
             <button mat-raised-button class="button" type="submit" >Guardar Usuario</button>
@@ -31,3 +31,5 @@
     </form>
     
 </Div>
+
+
