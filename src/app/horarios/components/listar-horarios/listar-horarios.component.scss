@@ -22,6 +22,15 @@ table {
     width: 50%;
 }
 
+::ng-deep snack-bar-container.success {
+    background-color: #49b462;
+    color: #FFFFFF;
+}
+
+::ng-deep .mat-simple-snackbar-action {
+    color: #FFFFFF;
+}
+
 @media (max-width: 680px) {
     table {
         width: 100%;
