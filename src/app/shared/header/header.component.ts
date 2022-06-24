@@ -3,20 +3,20 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+	selector: 'app-header',
+	templateUrl: './header.component.html',
+	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public authService: AuthService, private router: Router) { }
+	constructor(public authService: AuthService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
-  cerrarSesion(): void {
-    this.authService.logout();
-    this.router.navigate(['/']);
-  }
+	cerrarSesion(): void {
+		this.authService.logout();
+		this.router.navigate(['/']);
+	}
 
 }

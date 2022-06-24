@@ -93,7 +93,7 @@ export class AuthService {
 				window.localStorage.removeItem('currentUser');
 				window.localStorage.removeItem('accessToken');
 			})
-		);
+		).subscribe();
 	}
 
 
