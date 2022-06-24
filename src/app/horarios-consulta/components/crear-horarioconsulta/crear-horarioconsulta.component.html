@@ -1,51 +1,51 @@
 <p>Crear Horario de Consulta</p>
 
 <Div class="Conteiner-form">
-    <form  [formGroup]="form" (ngSubmit)="add_horario()" class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Seleccionar Día</mat-label>
-            <select matNativeControl formControlName="day"  required>
-                <option value="" selected></option>
-                <option value="Monday">Lunes</option>
-                <option value="Tuesday">Martes</option>
-                <option value="Wednesday">Miercoles</option>
-                <option value="Thursday">Jueves</option>
-                <option value="Friday">Viernes</option>
-                <option value="Saturday">Sabado</option>
-              </select>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Seleccionar Hora</mat-label>
-            <select matNativeControl formControlName="hour"  required>
-                <option value="" selected></option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-              </select>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Seleccionar Materia</mat-label>
-            <mat-select formControlName="id_materia">
-                <mat-option *ngFor="let materia of materias" (ngSubmit)="add_horario()"  [value]="materia.id">
-                  {{materia.name}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div>
-            <button mat-raised-button class="button" type="submit" >Guardar Horario</button>
-        </div>
-    </form>
+	<form [formGroup]="form" (ngSubmit)="add_horario()" class="example-form">
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Seleccionar Día</mat-label>
+			<select matNativeControl formControlName="day" required>
+				<option value="" selected></option>
+				<option value="Monday">Lunes</option>
+				<option value="Tuesday">Martes</option>
+				<option value="Wednesday">Miercoles</option>
+				<option value="Thursday">Jueves</option>
+				<option value="Friday">Viernes</option>
+				<option value="Saturday">Sabado</option>
+			</select>
+		</mat-form-field>
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Seleccionar Hora</mat-label>
+			<select matNativeControl formControlName="hour" required>
+				<option value="" selected></option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+			</select>
+		</mat-form-field>
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Seleccionar Materia</mat-label>
+			<mat-select formControlName="id_materia">
+				<mat-option *ngFor="let materia of materias" (ngSubmit)="add_horario()" [value]="materia.id">
+					{{materia.name}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<div>
+			<button mat-raised-button class="button" color="primary" type="submit">Guardar Horario</button>
+		</div>
+	</form>
 </Div>
