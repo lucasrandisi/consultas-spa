@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatSort } from '@angular/material/sort';
-import { Usuario } from './usuarios';
+
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
@@ -18,17 +18,16 @@ export class ListadoComponent implements OnInit {
 
 	dataSource = new MatTableDataSource();
 
-	displayedColumns = ['usuario', 'agregar'];
+	displayedColumns = ['id','rol_id','email','usuario'];
 
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort, {}) sort: MatSort;
 
-	constructor(private http: HttpClient, private authService: AuthService) { }
+	constructor(private http: HttpClient) { }
 
 
 	ngOnInit() {
 		this.getUsuarios();
-		console.log(this.authService.accessToken);
 
 	}
 

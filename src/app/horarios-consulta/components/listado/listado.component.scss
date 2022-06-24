@@ -6,11 +6,10 @@
 p {
     justify-content:left;
     font-size: 2vw;
-    padding-left: 30%;
+    padding-left: 26%;
 }
-.crear{
-    margin-left: 15%;
-    width: 75px
+.agregar{
+    margin-left: 14%;
 }
 .mat-success {
     background-color: green;
@@ -30,22 +29,9 @@ p {
 }
 
 table {
-    width: 40%;
+    width: 50%;
 }
 
-.mat-column-id {
-    flex: 0 0 15%;
-}
-
-.mat-column-rol_id {
-    flex: 0 0 15%;
-}
-.mat-column-email {
-    flex: 0 0 50%;
-}
-.mat-column-usuario {
-    flex: 0 0 20%;
-}
 @media (max-width: 680px) {
     table {
         width: 100%;

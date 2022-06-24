@@ -12,7 +12,7 @@ import { ListadoMateriasService } from './listado-materias.service';
 export class ListadoMateriasComponent implements OnInit {
 
   filterMateria = '';
-  
+  displayedColumns = ['materia', 'accion']
   materias: Materia[] = [];
 
   constructor(private serviceMaterias: ListadoMateriasService, public dialog: MatDialog) { }
