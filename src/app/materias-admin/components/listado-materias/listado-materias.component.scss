@@ -1,40 +1,49 @@
-.title{
-    font-size: 40px;
-    margin-top: 2vw;
-    margin-left: 17vw;
+.title {
+	font-size: 40px;
+	margin-top: 2vw;
+	margin-left: 17vw;
 }
+
 .container {
-    display: flex;
-    justify-content: center;
-    .mat-primary {
-        background-color: #5FA1BD;
-    }
+	display: flex;
+	justify-content: center;
+
+	.mat-primary {
+		background-color: #5FA1BD;
+	}
 }
-.header{
-    display: grid;
-    grid-template-columns: 0.3fr 1.7fr ;
+
+.header {
+	display: grid;
+	grid-template-columns: 0.3fr 1.7fr;
 }
-.buttonback{
-    margin-left: 7vh;
-    margin-top: 1.6vh;
-    width: 4.5vw;
-    height: 6.5vh;
+
+.buttonback {
+	margin-left: 7vh;
+	margin-top: 1.6vh;
+	width: 4.5vw;
+	height: 6.5vh;
 }
+
 .container-filters {
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2em;
-    align-items: center;
-    .button {
-        background-color: #5FA1BD;
-        margin-left: 3em;
-        height: 45px;
-    }
+	margin-top: 1em;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2em;
+	align-items: center;
+
+	.button {
+		background-color: #5FA1BD;
+		margin-left: 3em;
+		height: 45px;
+	}
 }
 
 :host::ng-deep {
-    th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
-        width: 400px;
-    }
+
+	th.mat-header-cell:first-of-type,
+	td.mat-cell:first-of-type,
+	td.mat-footer-cell:first-of-type {
+		width: 400px;
+	}
 }
