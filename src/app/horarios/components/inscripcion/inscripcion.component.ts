@@ -29,7 +29,7 @@ export class InscripcionComponent implements OnInit {
         horario_consulta_id: this.id
       };
       this.horariosService.inscribirConsulta(this.inscripcion).subscribe(response => {
-        console.log(response);
+        this.dialogRef.close(response);
       });
     }
   }

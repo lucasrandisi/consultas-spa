@@ -4,6 +4,7 @@ import { Horarios } from '../../horarios.entities';
 import { HorariosService } from '../../horarios.service';
 import { InscripcionComponent } from '../inscripcion/inscripcion.component';
 import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-listar-horarios',
@@ -17,10 +18,13 @@ export class ListarHorariosComponent implements OnInit {
 
   idMateria: number;
 
+  durationInSeconds = 3;
+
   constructor(
     private horariosService: HorariosService,
     public dialog: MatDialog,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -38,6 +42,15 @@ export class ListarHorariosComponent implements OnInit {
       width: '500px',
       data: id
     });
+    dialogRef.afterClosed().subscribe(response => {
+      if (response) {
+        this._snackBar.open('Inscripto a horario de consulta', 'Cerrar', {
+          duration: 3000,
+          verticalPosition: 'top',
+          horizontalPosition: 'end',
+          panelClass: ['success']
+        });
+      }
+    })
   }
-
 }
