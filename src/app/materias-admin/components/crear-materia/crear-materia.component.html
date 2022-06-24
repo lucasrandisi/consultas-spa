@@ -1,15 +1,11 @@
-<p>Crear Materia</p>
+<Div class="Container-form">
+	<p>Crear Materia</p>
+	<form [formGroup]="form" (ngSubmit)="add_materia()">
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Ingresar Nueva Materia</mat-label>
+			<input matInput formControlName="name" type="text" class="searcher">
+		</mat-form-field>
 
-
-
-<Div class="Conteiner-form">
-    <form  [formGroup]="form" (ngSubmit)="add_materia()" class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Ingresar Nueva Materia</mat-label>
-            <input matInput formControlName="name" type="text" class="searcher" >
-        </mat-form-field>
-        <div>
-            <button mat-raised-button class="button" type="submit" >Guardar Materia</button>
-        </div>
-    </form>
+		<button mat-raised-button class="button" color="primary" type="submit">Guardar Materia</button>
+	</form>
 </Div>
