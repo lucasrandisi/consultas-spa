@@ -21,7 +21,7 @@ export class LoggedOutGuard implements CanActivate, CanActivateChild {
 				this.router.navigate(['/usuarios']);
 			}
 			else if (this.authService.currentUser.rol_id === 2) {
-				this.router.navigate(['/horarios-consulta']);
+				this.router.navigate([`/horarios-consulta/${this.authService.currentUser.rol_id}`]);
 			}
 
 			return false;
