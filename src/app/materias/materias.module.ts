@@ -3,33 +3,31 @@ import { CommonModule } from '@angular/common';
 
 import { MateriasRoutingModule } from './materias-routing.module';
 import { ListarMateriasComponent } from './components/listar-materias/listar-materias.component';
-import { CrearMateriaComponent } from './components/crear-materia/crear-materia.component';
 
 
 
-import {MatButtonModule} from '@angular/material/button';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table'; 
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 
 
 
 
 @NgModule({
-  declarations: [
-    ListarMateriasComponent,
-    CrearMateriaComponent
-  ],
-  imports: [
-    CommonModule,
-    MateriasRoutingModule,
+	declarations: [
+		ListarMateriasComponent,
+	],
+	imports: [
+		CommonModule,
+		MateriasRoutingModule,
 		MatButtonModule,
 		FormsModule,
 		MatFormFieldModule,
 		MatInputModule,
-    ReactiveFormsModule,
-    MatTableModule
-  ]
+		ReactiveFormsModule,
+		MatTableModule
+	]
 })
 export class MateriasModule { }
