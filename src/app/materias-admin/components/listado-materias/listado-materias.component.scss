@@ -1,7 +1,6 @@
 .title {
 	font-size: 40px;
 	margin-top: 2vw;
-	margin-left: 17vw;
 }
 
 .container {
@@ -14,8 +13,8 @@
 }
 
 .header {
-	display: grid;
-	grid-template-columns: 0.3fr 1.7fr;
+	display: flex;
+	justify-content: center;
 }
 
 .buttonback {
@@ -34,7 +33,6 @@
 
 	.button {
 		background-color: #5FA1BD;
-		margin-left: 3em;
 		height: 45px;
 	}
 }
