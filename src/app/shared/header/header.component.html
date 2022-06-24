@@ -1,27 +1,23 @@
 <div class="header">
-    <div class="logo">
-        <a href="/">
-            <img src="https://i.ibb.co/2MnTcxc/utn-logo.png">
-        </a>
-        <p>SISTEMAS DE CONSULTAS FRRO</p>
-    </div>
-    <div class="actions" *ngIf="authService.currentUser.rol_id === 1">
-        <div class="botones">
-            <button routerLink="/usuarios">Usuarios</button>
-            <button routerLink="/admin-materias">Materias</button>
-            <button routerLink="admin-horarios">Horarios</button>
-        </div>
-        <div>
-            <p>{{authService.currentUser.name}}</p>
-            <button (click)="cerrarSesion()">Cerrar sesión</button>
-        </div>
-    </div>
-    <div class="actions" *ngIf="authService.currentUser.rol_id === 2">
-        <p>{{authService.currentUser.name}} - </p>
-        <button (click)="cerrarSesion()">Cerrar sesión</button>
-    </div>
-    <div class="actions" *ngIf="authService.currentUser.rol_id === 3">
-        <p>{{authService.currentUser.name}} - </p>
-        <button (click)="cerrarSesion()">Cerrar sesión</button>
-    </div>
+	<div class="logo">
+		<a href="/">
+			<img src="https://i.ibb.co/2MnTcxc/utn-logo.png">
+		</a>
+		<p>SISTEMAS DE CONSULTAS FRRO</p>
+	</div>
+	<div class="actions" *ngIf="authService?.currentUser?.rol_id === 1">
+		<div class="botones">
+			<button routerLink="/usuarios">Usuarios</button>
+			<button routerLink="/admin-materias">Materias</button>
+			<button routerLink="admin-horarios">Horarios</button>
+		</div>
+		<div>
+			<p>{{authService.currentUser.name}}</p>
+			<button (click)="cerrarSesion()">Cerrar sesión</button>
+		</div>
+	</div>
+	<div class="actions" *ngIf="authService?.currentUser?.rol_id === 2">
+		<p>{{authService.currentUser.name}} - </p>
+		<button (click)="cerrarSesion()">Cerrar sesión</button>
+	</div>
 </div>
