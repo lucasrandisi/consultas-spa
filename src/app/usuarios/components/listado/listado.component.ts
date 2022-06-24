@@ -18,7 +18,7 @@ export class ListadoComponent implements OnInit {
 
 	dataSource = new MatTableDataSource();
 
-	displayedColumns = ['id','rol_id','email','usuario'];
+	displayedColumns = ['id', 'rol_id', 'email', 'usuario'];
 
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort, {}) sort: MatSort;
@@ -34,7 +34,7 @@ export class ListadoComponent implements OnInit {
 	getUsuarios() {
 		this.http.get(`${environment.apiUrl}/users`).subscribe((response: any) => {
 			console.log(response);
-			this.dataSource = response;
+			this.dataSource = response.data;
 		}
 		)
 	};
