@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+	production: true,
+	apiUrl: 'http://api.consultas-frro.tk/api'
+
 };
