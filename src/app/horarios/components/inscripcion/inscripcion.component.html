@@ -3,7 +3,7 @@
 </p>
 <div>
     <p>Para finalizar ingrese su email</p>
-    <form class="inscription-form">
+    <form class="inscription-form" (ngSubmit)="inscribirse()">
         <mat-form-field class="inscription-full-width" appearance="fill">
           <mat-label>Email</mat-label>
           <input type="email" matInput [formControl]="emailFormControl" placeholder="Ej. ejemplo@gmail.com">
@@ -14,9 +14,9 @@
             El email es <strong>requerido</strong>
           </mat-error>
         </mat-form-field>
+        <div class="action-buttons">
+          <button mat-raised-button color="primary" (click)="closeDialog()">Cancelar</button>
+          <button mat-raised-button color="primary" type="submit">Aceptar</button>
+      </div>
     </form>
-    <div class="action-buttons">
-        <button mat-raised-button color="primary" (click)="closeDialog()">Cancelar</button>
-        <button mat-raised-button color="primary">Aceptar</button>
-    </div>
 </div>
