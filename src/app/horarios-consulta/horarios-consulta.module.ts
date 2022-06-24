@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HorariosConsultaRoutingModule } from './horarios-consulta-routing.module';
-import { CrearHorarioconsultaComponent } from './Components/crear-horarioconsulta/crear-horarioconsulta.component';
+import { CrearHorarioconsultaComponent } from './components/crear-horarioconsulta/crear-horarioconsulta.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
