@@ -1,35 +1,29 @@
-<p>Crear Nuevo Usuario</p>
-
-
+<p class="title">Crear Nuevo Usuario</p>
 
 <Div class="Conteiner-form">
-    <form  [formGroup]="form" (ngSubmit)="add_usuario()" class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Ingresar Nombre</mat-label>
-            <input matInput formControlName="name" type="text" class="searcher" >
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Ingresar Email</mat-label>
-            <input matInput formControlName="email" type="email" class="searcher" >
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Seleccionar Rol</mat-label>
-            <select matNativeControl formControlName="rol" required>
-                <option value="" selected></option>
-                <option value="1" >Admin</option>
-                <option value="2">Profesor</option>
-                <option value="3">Alumno</option>
-              </select>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Ingresar Contraseña</mat-label>
-            <input matInput formControlName="password" type="password" class="searcher" >
-        </mat-form-field>
-        <div>
-            <button mat-raised-button class="button" type="submit" >Guardar Usuario</button>
-        </div>
-    </form>
-    
+	<form [formGroup]="form" (ngSubmit)="add_usuario()" class="example-form">
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Ingresar Nombre</mat-label>
+			<input matInput formControlName="name" type="text" class="searcher">
+		</mat-form-field>
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Ingresar Email</mat-label>
+			<input matInput formControlName="email" type="email" class="searcher">
+		</mat-form-field>
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Seleccionar Rol</mat-label>
+			<select matNativeControl formControlName="rol" required>
+				<option value="" selected></option>
+				<option value="1">Admin</option>
+				<option value="2">Profesor</option>
+				<option value="3">Alumno</option>
+			</select>
+		</mat-form-field>
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label>Ingresar Contraseña</mat-label>
+			<input matInput formControlName="password" type="password" class="searcher">
+		</mat-form-field>
+
+		<button mat-raised-button class="button" color="primary" type="submit">Guardar Usuario</button>
+	</form>
 </Div>
-
-
