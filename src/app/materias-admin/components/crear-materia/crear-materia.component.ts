@@ -16,7 +16,7 @@ export class CrearMateriaComponent implements OnInit {
 	materia: Materia[] = [];
 
 	constructor(
-		private http: HttpClient, private route: Router
+		private http: HttpClient, private router: Router
 	) { }
 
 	ngOnInit(): void {
@@ -37,19 +37,7 @@ export class CrearMateriaComponent implements OnInit {
 		this.http.post(`${environment.apiUrl}/materias`, {
 			...this.form.value
 		}).subscribe((response: any) => {
-
-			let max = 0;
-
-			for (let e of this.materia) {
-				if (e.id > max) {
-					max = e.id;
-				}
-			}
-			max = max + 1;
-
-			this.materia.push(
-				new Materia(max, materia)
-			);
+			this.router.navigate(['/admin-materias']);
 		}
 		)
 	}
