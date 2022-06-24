@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoggedInGuard } from './shared/guards/logged-in.guard';
 import { LoggedOutGuard } from './shared/guards/logged-out.guard';
 
 const routes: Routes = [
@@ -29,19 +30,23 @@ const routes: Routes = [
 	//Admin
 	{
 		path: 'admin-materias',
+		canActivateChild: [LoggedInGuard],
 		loadChildren: () => import('./materias-admin/materias-admin.module').then(m => m.MateriasAdminModule),
 	},
 	{
 		path: 'usuarios',
+		canActivateChild: [LoggedInGuard],
 		loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule),
 	},
 	// Profesor
 	{
 		path: 'inscripciones',
+		canActivateChild: [LoggedInGuard],
 		loadChildren: () => import('./inscripciones/inscripciones.module').then(m => m.InscripcionesModule),
 	},
 	{
 		path: 'horarios-consulta',
+		canActivateChild: [LoggedInGuard],
 		loadChildren: () => import('./horarios-consulta/horarios-consulta.module').then(m => m.HorariosConsultaModule),
 	}
 ];

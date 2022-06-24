@@ -3,6 +3,7 @@ import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
+import { Router } from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
 	private _currentUser!: User | null;
 	private _accessToken!: string;
 
-	constructor(httpClient: HttpClient) {
+	constructor(httpClient: HttpClient, private router: Router) {
 		this.httpClient = httpClient;
 	}
 
@@ -93,7 +94,9 @@ export class AuthService {
 				window.localStorage.removeItem('currentUser');
 				window.localStorage.removeItem('accessToken');
 			})
-		).subscribe();
+		).subscribe(() => {
+			this.router.navigate(['']);
+		});
 	}
 
 
