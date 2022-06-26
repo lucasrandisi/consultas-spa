@@ -3,7 +3,7 @@
 	<form [formGroup]="form" (ngSubmit)="add_materia()">
 		<mat-form-field class="example-full-width" appearance="fill">
 			<mat-label>Ingresar Nueva Materia</mat-label>
-			<input matInput formControlName="name" type="text" class="searcher">
+			<input matInput formControlName="name" type="text" class="searcher" aria-label="buscador">
 		</mat-form-field>
 
 		<button mat-raised-button class="button" color="primary" type="submit">Guardar Materia</button>
