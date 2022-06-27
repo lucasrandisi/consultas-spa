@@ -19,8 +19,6 @@
 }
 
 
-
-
 ::ng-deep .create-account-form {
 
 	.mat-form-field-appearance-fill .mat-form-field-flex{
@@ -47,4 +45,10 @@
 	width: 85%;
 	margin: auto;
 	display: block;
+}
+
+.wrong-credentials {
+    margin-top: 1rem;
+    text-align: center;
+    color: red;
 }

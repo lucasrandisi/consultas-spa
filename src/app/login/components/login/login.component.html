@@ -12,6 +12,8 @@
         <div class="container">
             <button mat-raised-button color="primary" type="submit">Login</button>
         </div>
+
+        <div *ngIf="wrongCredentials" class="wrong-credentials">Credenciales inválidas</div>
     </form>
     
 
