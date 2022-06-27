@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { EliminarMateriaDialogComponent } from './components/eliminar-materia-dialog/eliminar-materia-dialog.component';
 import { CrearMateriaComponent } from './components/crear-materia/crear-materia.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { CrearMateriaComponent } from './components/crear-materia/crear-materia.
 		MateriasAdminRoutingModule,
 		MatDialogModule,
 		ReactiveFormsModule,
-		MatTableModule
+        MatTableModule,
+        MatIconModule
 	]
 })
 export class MateriasAdminModule { }

@@ -1,28 +1,27 @@
-<div class="header">
-	<h2 class="title">
-		Listado de Materias de Administrador
-	</h2>
-</div>
-
-<div class="container-filters">
-	<button class="button" mat-raised-button color="primary" routerLink="./crear">Agregar materia</button>
-</div>
-
-<div class="container">
-	<table mat-table [dataSource]="materias" *ngIf="materias">
-		<ng-container matColumnDef="materia">
-			<th mat-header-cell *matHeaderCellDef> Materia </th>
-			<td mat-cell *matCellDef="let materia"> {{ materia.name }} </td>
-		</ng-container>
-		<ng-container matColumnDef="accion">
-			<th mat-header-cell *matHeaderCellDef class="center"> Accion </th>
-			<td mat-cell *matCellDef="let materia" class="center">
-				<button mat-raised-button color="primary">
-					Eliminar
-				</button>
-			</td>
-		</ng-container>
-		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-	</table>
+<div class="main">
+    <div class="header">
+        <h1 class="title">
+            Listado de Materias de Administrador
+        </h1>
+        <button class="button" mat-raised-button routerLink="./crear">Agregar materia</button>
+    </div>
+    
+    <div class="container">
+        <table mat-table [dataSource]="materias" *ngIf="materias">
+            <ng-container matColumnDef="materia">
+                <th mat-header-cell *matHeaderCellDef> Materia </th>
+                <td mat-cell *matCellDef="let materia"> {{ materia.name }} </td>
+            </ng-container>
+            <ng-container matColumnDef="accion">
+                <th mat-header-cell *matHeaderCellDef class="center"> Accion </th>
+                <td mat-cell *matCellDef="let materia" class="center">
+                    <button mat-raised-button color="primary">
+                        Eliminar
+                    </button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
 </div>

@@ -1,11 +1,18 @@
-<Div class="Container-form">
-	<p>Crear Materia</p>
+<div class="navigation-container">
+    <button mat-icon-button  aria-label="Navegar página anterior" class="navigation-button" routerLink="..">
+        <mat-icon  aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+    </button>
+</div>
+
+<div class="container-form">
+	<h1>Crear Materia</h1>
+
 	<form [formGroup]="form" (ngSubmit)="add_materia()">
 		<mat-form-field class="example-full-width" appearance="fill">
 			<mat-label>Ingresar Nueva Materia</mat-label>
 			<input matInput formControlName="name" type="text" class="searcher" aria-label="buscador">
 		</mat-form-field>
 
-		<button mat-raised-button class="button" color="primary" type="submit">Guardar Materia</button>
+		<button mat-raised-button class="button" type="submit">Guardar Materia</button>
 	</form>
-</Div>
+</div>

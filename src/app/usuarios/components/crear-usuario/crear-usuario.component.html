@@ -1,6 +1,13 @@
-<p class="title">Crear Nuevo Usuario</p>
+<div class="navigation-container">
+    <button mat-icon-button  aria-label="Navegar página anterior" class="navigation-button" routerLink="/materias">
+        <mat-icon  aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+    </button>
+</div>
 
-<Div class="Conteiner-form">
+
+<h1 class="title">Crear Nuevo Usuario</h1>
+
+<div class="Conteiner-form">
 	<form [formGroup]="form" (ngSubmit)="add_usuario()" class="example-form">
 		<mat-form-field class="example-full-width" appearance="fill">
 			<mat-label>Ingresar Nombre</mat-label>
@@ -24,6 +31,6 @@
 			<input matInput formControlName="password" type="password" class="searcher" aria-label="contraseña">
 		</mat-form-field>
 
-		<button mat-raised-button class="button" color="primary" type="submit">Guardar Usuario</button>
+		<button mat-raised-button class="button" type="submit">Guardar Usuario</button>
 	</form>
-</Div>
+</div>

@@ -1,16 +1,20 @@
 .cabecera{
     display: flex;
+    align-items: center;
     margin-top: 1em;
     margin-bottom: 1em;
 }
-p {
+h1 {
     justify-content:left;
     font-size: 2vw;
     padding-left: 30%;
+    margin-bottom: 0;
 }
 .crear{
     margin-left: 15%;
-    width: 75px
+    width: 75px;
+    background-color: #5fa1bd;
+    color: white;
 }
 .mat-success {
     background-color: green;
