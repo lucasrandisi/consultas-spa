@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatTableModule,
     MatSelectModule,
+    MatIconModule
   ]
 })
 export class HorariosConsultaModule { }

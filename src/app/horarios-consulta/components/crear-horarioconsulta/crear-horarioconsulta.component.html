@@ -1,6 +1,12 @@
-<p>Crear Horario de Consulta</p>
+<div class="navigation-container">
+    <button mat-icon-button  aria-label="Navegar página anterior" class="navigation-button" routerLink="..">
+        <mat-icon  aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+    </button>
+</div>
 
-<Div class="Conteiner-form">
+<h1>Crear Horario de Consulta</h1>
+
+<div class="conteiner-form">
 	<form [formGroup]="form" (ngSubmit)="add_horario()" class="example-form">
 		<mat-form-field class="example-full-width" appearance="fill">
 			<mat-label>Seleccionar Día</mat-label>
@@ -45,7 +51,7 @@
 			</mat-select>
 		</mat-form-field>
 		<div>
-			<button mat-raised-button class="button" color="primary" type="submit">Guardar Horario</button>
+			<button mat-raised-button class="button" type="submit">Guardar Horario</button>
 		</div>
 	</form>
-</Div>
+</div>

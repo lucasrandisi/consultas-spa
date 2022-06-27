@@ -11,7 +11,7 @@ import { HorarioProfesor } from '../../horarioprofesor.entities';
 })
 export class ListadoComponent implements OnInit {
 
-  displayedColumns: string[] = ['dia', 'hora', 'materia', 'accion'];
+  displayedColumns: string[] = ['dia', 'hora', 'materia', 'inscriptos', 'accion'];
   horarios: HorarioProfesor[] = [];
   idProfesor: string;
   status;
