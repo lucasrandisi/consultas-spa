@@ -1,4 +1,11 @@
-<p>Listado de horarios disponibles</p>
+<div class="navigation-container">
+    <button mat-icon-button  aria-label="Navegar página anterior" class="navigation-button" routerLink="/materias">
+        <mat-icon  aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+    </button>
+</div>
+
+<h1>Listado de horarios disponibles</h1>
+
 <div class="container">
   <table mat-table [dataSource]="horarios" *ngIf="horarios">
     <ng-container matColumnDef="dia">

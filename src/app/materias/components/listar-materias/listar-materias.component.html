@@ -1,11 +1,12 @@
-<p>Listado de Materias</p>
+<div class="navigation-container">
+    <button mat-icon-button  aria-label="Navegar página anterior" class="navigation-button" routerLink="..">
+        <mat-icon  aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+    </button>
+</div>
 
-<!-- HACER UN BUSCADOR SIMPLE
-<mat-form-field appearance="standard">
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input aria-label="buscar">
-</mat-form-field>
--->
+<h1>Listado de Materias</h1>
+
+
 <div class="container">
 	<table mat-table [dataSource]="materias">
 	  <ng-container matColumnDef="materia">

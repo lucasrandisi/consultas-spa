@@ -12,6 +12,7 @@ import { HorariosRoutingModule } from './horarios-routing.module';
 import { InscripcionComponent } from './components/inscripcion/inscripcion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatInputModule,
+    MatIconModule,
   ]
 })
 export class HorariosModule { }

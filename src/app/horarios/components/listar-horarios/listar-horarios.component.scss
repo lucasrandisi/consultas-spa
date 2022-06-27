@@ -1,4 +1,4 @@
-p {
+h1 {
     display: flex;
     justify-content: center;
     font-size: 2vw;
@@ -34,5 +34,15 @@ table {
 @media (max-width: 680px) {
     table {
         width: 100%;
+    }
+}
+
+.navigation-container {
+    position: relative;
+
+    .navigation-button {
+        position: absolute;
+        left: 1em;
+        top: 1em;
     }
 }
