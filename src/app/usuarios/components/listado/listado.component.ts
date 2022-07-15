@@ -18,9 +18,10 @@ export class ListadoComponent implements OnInit, AfterViewInit {
 
 	dataSource = new MatTableDataSource();
 
-	displayedColumns = ['id', 'rol_id', 'email', 'usuario'];
+    displayedColumns = ['id', 'rol', 'name', 'email'];
 
-	@ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
 
 	constructor(private http: HttpClient) { }
 
@@ -31,6 +32,16 @@ export class ListadoComponent implements OnInit, AfterViewInit {
     
     ngAfterViewInit(): void {
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+
+        this.dataSource.sortingDataAccessor = this.sortingDataAccesor;
+    }
+
+    sortingDataAccesor(row, sortHeaderId) {
+        switch (sortHeaderId) {
+            case 'rol': return row.rol.name
+            default: return row[sortHeaderId]
+        }
     }
 
 	getUsuarios() {

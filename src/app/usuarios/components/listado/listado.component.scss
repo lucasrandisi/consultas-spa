@@ -33,17 +33,19 @@
         width: 100%;
         
         .mat-column-id {
-            flex: 0 0 15%;
+            flex: 1;
         }
         
-        .mat-column-rol_id {
-            flex: 0 0 15%;
+        .mat-column-rol {
+            flex: 2;
         }
+        
+        .mat-column-name {
+            flex: 3;
+        }
+
         .mat-column-email {
-            flex: 0 0 50%;
-        }
-        .mat-column-usuario {
-            flex: 0 0 20%;
+            flex: 3;
         }
     }
     

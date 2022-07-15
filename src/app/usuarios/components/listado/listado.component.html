@@ -6,23 +6,23 @@
 
 	<table mat-table [dataSource]="dataSource" matSort>
 		<ng-container matColumnDef="id">
-			<mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+			<mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
 			<mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
 		</ng-container>
 
-		<ng-container matColumnDef="rol_id">
-			<mat-header-cell *matHeaderCellDef mat-sort-header> Rol </mat-header-cell>
+		<ng-container matColumnDef="rol">
+			<mat-header-cell *matHeaderCellDef mat-sort-header>Rol</mat-header-cell>
 			<mat-cell *matCellDef="let element"> {{element.rol.name}} </mat-cell>
 		</ng-container>
 
-		<ng-container matColumnDef="email">
-			<mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
-			<mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
-		</ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
 
-		<ng-container matColumnDef="usuario">
-			<mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
-			<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+		<ng-container matColumnDef="email">
+			<mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+			<mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
 		</ng-container>
 
 		<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
