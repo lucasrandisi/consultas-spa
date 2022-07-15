@@ -4,15 +4,18 @@
     </button>
 </div>
 
-<div class="container-form">
-	<h1>Crear Materia</h1>
+<h1 class="title">Crear Materia</h1>
 
+
+<div class="form-container">
 	<form [formGroup]="form" (ngSubmit)="add_materia()">
-		<mat-form-field class="example-full-width" appearance="fill">
+		<mat-form-field class="full-width" appearance="fill">
 			<mat-label>Ingresar Nueva Materia</mat-label>
-			<input matInput formControlName="name" type="text" class="searcher" aria-label="buscador">
+			<input matInput formControlName="name" type="text" aria-label="buscador">
 		</mat-form-field>
 
-		<button mat-raised-button class="button" type="submit">Guardar Materia</button>
+		<button mat-raised-button class="button" type="submit">Crear Materia</button>
+
+        <span *ngIf="error" class="error">{{error}}</span>
 	</form>
 </div>

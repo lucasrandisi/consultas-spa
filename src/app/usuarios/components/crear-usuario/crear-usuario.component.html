@@ -4,7 +4,6 @@
     </button>
 </div>
 
-
 <h1 class="title">Crear Nuevo Usuario</h1>
 
 <div class="form-container">
@@ -20,18 +19,18 @@
         </mat-form-field>
 		<mat-form-field class="full-width" appearance="fill">
 			<mat-label>Ingresar Nombre</mat-label>
-			<input matInput formControlName="name" type="text" class="searcher" aria-label="nombre">
+			<input matInput formControlName="name" type="text" aria-label="nombre">
 		</mat-form-field>
 		<mat-form-field class="full-width" appearance="fill">
 			<mat-label>Ingresar Email</mat-label>
-			<input matInput formControlName="email" type="email" class="searcher" aria-label="email">
+			<input matInput formControlName="email" type="email" aria-label="email">
 		</mat-form-field>
 		<mat-form-field class="full-width" appearance="fill">
 			<mat-label>Ingresar Contraseña</mat-label>
-			<input matInput formControlName="password" type="password" class="searcher" aria-label="contraseña">
+			<input matInput formControlName="password" type="password" aria-label="contraseña">
 		</mat-form-field>
 
-		<button mat-raised-button class="button" type="submit">Guardar Usuario</button>
+		<button mat-raised-button class="button" type="submit">Crear Usuario</button>
 
         <span *ngIf="error" class="error">{{error}}</span>
 	</form>

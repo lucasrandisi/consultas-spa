@@ -1,35 +1,3 @@
-.container-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
-
-h1 {
-	display: flex;
-	justify-content: center;
-	font-size: 2vw;
-}
-
-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.example-full-width {
-	background-color: white;
-	margin-top: 2vh;
-	width: 50vh;
-}
-
-.button {
-	margin-top: 2vh;
-    background-color: #5fa1bd;
-    color: white;
-}
-
 .navigation-container {
     position: relative;
 
@@ -38,4 +6,42 @@ form {
         left: 1em;
         top: 1em;
     }
+}
+
+.title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 2vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .full-width {
+            background-color: white;
+            margin-top: 3vh;
+            width: 50vh;
+        }
+
+        .button {
+            margin-top: 4vh;
+            background-color: #5fa1bd;
+            color: white;
+        }
+    }
+}
+
+.error {
+    color: red;
+    margin-top: 1rem;
+    text-align: center;
 }

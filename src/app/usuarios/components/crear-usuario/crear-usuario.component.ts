@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -14,7 +14,9 @@ export class CrearUsuarioComponent implements OnInit {
     error: string | null;
 
 	constructor(
-		private http: HttpClient, private router: Router
+        private http: HttpClient,
+        private router: Router,
+        private route: ActivatedRoute
 	) { }
 
 	ngOnInit(): void {
@@ -45,8 +47,8 @@ export class CrearUsuarioComponent implements OnInit {
 			rol_id: rol_id,
 
         }).subscribe({
-            next: (response: any) => {
-                this.router.navigate(['/admin/usuarios']);
+            next: () => {
+                this.router.navigate(['..'], { relativeTo: this.route });
             },
             error: (response) => {
                 this.error = response.error.message;
