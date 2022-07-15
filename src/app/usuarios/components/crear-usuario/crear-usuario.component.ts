@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
 	styleUrls: ['./crear-usuario.component.scss']
 })
 export class CrearUsuarioComponent implements OnInit {
-	form: FormGroup;
+    form: FormGroup;
+    error: string | null;
 
 	constructor(
 		private http: HttpClient, private router: Router
@@ -43,9 +44,14 @@ export class CrearUsuarioComponent implements OnInit {
 			password: password,
 			rol_id: rol_id,
 
-		}).subscribe((response: any) => {
-			this.router.navigate(['']);
-		});
+        }).subscribe({
+            next: (response: any) => {
+                this.router.navigate(['/admin/usuarios']);
+            },
+            error: (response) => {
+                this.error = response.error.message;
+            }
+        });
 	}
 
 }
