@@ -1,11 +1,10 @@
-<div class="cabecera">
-	<h1>Listado de Usuarios</h1>
-	<button mat-raised-button class="crear" routerLink="/usuarios/crear">Crear</button>
-</div>
 <div class="container">
+    <div class="header">
+        <h1>Listado de Usuarios</h1>
+        <button mat-raised-button class="crear" routerLink="/usuarios/crear">Crear</button>
+    </div>
 
 	<table mat-table [dataSource]="dataSource" matSort>
-
 		<ng-container matColumnDef="id">
 			<mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
 			<mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
@@ -30,4 +29,12 @@
 		<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 	</table>
 
+
+    <mat-paginator 
+        class="paginator"
+        #paginator
+        [pageSizeOptions]="[10, 20]"
+        showFirstLastButtons 
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
 </div>
