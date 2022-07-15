@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
     credentials: any = {}
-        wrongCredentials = false;
+    wrongCredentials = false;
 
 
     constructor(private authService: AuthService,private router : Router) { }
@@ -25,20 +25,18 @@ export class LoginComponent implements OnInit {
 
         this.authService.login(this.credentials).subscribe({
         next: response => {
-            console.log(response.user);
             if(response.user.rol.name == "Alumno"){
-            this.router.navigate(['/materias'])
+                this.router.navigate(['/materias'])
             }
             if(response.user.rol.name == "Admin"){
-            this.router.navigate(['/admin/usuarios']);
+                this.router.navigate(['/admin/usuarios']);
             }
             if(response.user.rol.name == "Profesor"){
-            this.router.navigate(['/horarios-consulta',response.user.id])
+                this.router.navigate(['/horarios-consulta'])
             }
         },
             error: error => {
                 this.wrongCredentials = true;
-                console.log(error)
             }
         })
   }

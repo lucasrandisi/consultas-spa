@@ -4,20 +4,18 @@ import { CrearHorarioconsultaComponent } from './components/crear-horarioconsult
 import { ListadoComponent } from './components/listado/listado.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: CrearHorarioconsultaComponent
-
-
-  },
-  {
-  path:':id',
-  component: ListadoComponent
-  }
+    {
+        path: '',
+        component: ListadoComponent
+    },
+    {
+        path: 'crear',
+        component: CrearHorarioconsultaComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class HorariosConsultaRoutingModule { }

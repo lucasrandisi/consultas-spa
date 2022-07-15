@@ -47,7 +47,7 @@ export class CrearHorarioconsultaComponent implements OnInit {
 			id_profesor: id_profesor,
 
 		}).subscribe((response: any) => {
-			this.router.navigate([`/horarios-consulta/${this.authService.currentUser.rol_id}`]);
+			this.router.navigate([`/horarios-consulta`]);
 		})
 	}
 
