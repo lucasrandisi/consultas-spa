@@ -29,12 +29,12 @@ const routes: Routes = [
 	},
 	//Admin
 	{
-		path: 'admin-materias',
+		path: 'admin/materias',
 		canActivateChild: [LoggedInGuard],
 		loadChildren: () => import('./materias-admin/materias-admin.module').then(m => m.MateriasAdminModule),
 	},
 	{
-		path: 'usuarios',
+		path: 'admin/usuarios',
 		canActivateChild: [LoggedInGuard],
 		loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule),
 	},
