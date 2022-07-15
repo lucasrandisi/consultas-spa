@@ -1,45 +1,48 @@
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.header {
-    display: flex;
-	justify-content: space-between;
-    align-items: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    width: 52%;
-    
-    .button {
-        background-color: #5FA1BD;
-        color: white;
-    }
-
-    .title {
-        font-size: 2vw;
-        margin: 0;
-    }
-}
-
 .container {
     display: flex;
     justify-content: center;
-    width: 52%;
-    
-    .mat-primary {
-        background-color: #5FA1BD;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+
+    .header {
+        position: relative;
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        h1 {
+            display: inline;
+            font-size: 2vw;
+            margin: 0;
+        }
+
+        .crear {
+            position: absolute;
+            right: 0;
+            width: 75px;
+            background-color: #5fa1bd;
+            color: white;
+        }
     }
-}
 
+    table {
+        width: 100%;
 
-:host::ng-deep {
+        .mat-column-materia {
+            flex: 1;
+        }
 
-	th.mat-header-cell:first-of-type,
-	td.mat-cell:first-of-type,
-	td.mat-footer-cell:first-of-type {
-		width: 400px;
-	}
+        .mat-column-accion {
+            width: 10%;
+            padding-right: 0;
+        }
+
+    }
+
+    .paginator {
+        align-self: end;
+    }
 }

@@ -1,27 +1,32 @@
-<div class="main">
+<div class="container">
     <div class="header">
-        <h1 class="title">
-            Listado de Materias de Administrador
-        </h1>
-        <button class="button" mat-raised-button routerLink="./crear">Agregar materia</button>
+        <h1>Listado de Materias</h1>
+        <button mat-raised-button class="crear" routerLink="./crear">Crear</button>
     </div>
+
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="materia">
+            <th mat-header-cell *matHeaderCellDef>Materia</th>
+            <td mat-cell *matCellDef="let materia">{{ materia.name }}</td>
+        </ng-container>
+        
+        <ng-container matColumnDef="accion">
+            <th mat-header-cell *matHeaderCellDef>Accion</th>
+            <td mat-cell *matCellDef="let materia">
+                <button mat-raised-button color="primary" (click)="deleteMateria($event, materia)">
+                    Eliminar
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
     
-    <div class="container">
-        <table mat-table [dataSource]="materias" *ngIf="materias">
-            <ng-container matColumnDef="materia">
-                <th mat-header-cell *matHeaderCellDef> Materia </th>
-                <td mat-cell *matCellDef="let materia"> {{ materia.name }} </td>
-            </ng-container>
-            <ng-container matColumnDef="accion">
-                <th mat-header-cell *matHeaderCellDef class="center"> Accion </th>
-                <td mat-cell *matCellDef="let materia" class="center">
-                    <button mat-raised-button color="primary">
-                        Eliminar
-                    </button>
-                </td>
-            </ng-container>
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    </div>
+    <mat-paginator 
+        class="paginator"
+        #paginator
+        [pageSizeOptions]="[10, 20]"
+        showFirstLastButtons 
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
 </div>

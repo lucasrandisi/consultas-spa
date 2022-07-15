@@ -27,7 +27,6 @@ export class ListadoComponent implements OnInit, AfterViewInit {
 
 	ngOnInit() {
 		this.getUsuarios();
-
     }
     
     ngAfterViewInit(): void {

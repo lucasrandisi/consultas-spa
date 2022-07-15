@@ -8,10 +8,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ListadoMateriasService {
+    constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) { }
-
-  getAllMaterias(): Observable<Materia[]> {
-    return this.http.get<Materia[]>(`${environment.apiUrl}/materias`);
-  }
+    getAllMaterias(): Observable<Materia[]> {
+        return this.http.get<Materia[]>(`${environment.apiUrl}/materias`);
+    }
 }

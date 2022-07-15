@@ -13,6 +13,7 @@ import { MatTableModule } from '@angular/material/table';
 import { EliminarMateriaDialogComponent } from './components/eliminar-materia-dialog/eliminar-materia-dialog.component';
 import { CrearMateriaComponent } from './components/crear-materia/crear-materia.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
 	declarations: [
@@ -30,7 +31,8 @@ import { MatIconModule } from '@angular/material/icon';
 		MatDialogModule,
 		ReactiveFormsModule,
         MatTableModule,
-        MatIconModule
+        MatIconModule,
+        MatPaginatorModule
 	]
 })
 export class MateriasAdminModule { }
