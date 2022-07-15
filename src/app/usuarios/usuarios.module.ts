@@ -15,8 +15,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
 	declarations: [
@@ -37,7 +38,8 @@ import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.
 		MatSortModule,
 		MatPaginatorModule,
 		MatInputModule,
-		MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatSelectModule
 	]
 })
 export class UsuariosModule { }

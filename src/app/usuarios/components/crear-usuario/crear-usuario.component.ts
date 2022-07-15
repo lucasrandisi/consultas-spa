@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { Usuario } from './Usuario';
 
 @Component({
 	selector: 'app-crear-usuario',

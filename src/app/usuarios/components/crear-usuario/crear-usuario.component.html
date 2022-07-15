@@ -9,6 +9,15 @@
 
 <div class="Conteiner-form">
 	<form [formGroup]="form" (ngSubmit)="add_usuario()" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Seleccionar Rol</mat-label>
+            <mat-select matNativeControl formControlName="rol" required>
+                <mat-option value="" selected></mat-option>
+                <mat-option value="1">Admin</mat-option>
+                <mat-option value="2">Profesor</mat-option>
+                <mat-option value="3">Alumno</mat-option>
+            </mat-select>
+        </mat-form-field>
 		<mat-form-field class="example-full-width" appearance="fill">
 			<mat-label>Ingresar Nombre</mat-label>
 			<input matInput formControlName="name" type="text" class="searcher" aria-label="nombre">
@@ -16,15 +25,6 @@
 		<mat-form-field class="example-full-width" appearance="fill">
 			<mat-label>Ingresar Email</mat-label>
 			<input matInput formControlName="email" type="email" class="searcher" aria-label="email">
-		</mat-form-field>
-		<mat-form-field class="example-full-width" appearance="fill">
-			<mat-label>Seleccionar Rol</mat-label>
-			<select matNativeControl formControlName="rol" required>
-				<option value="" selected></option>
-				<option value="1">Admin</option>
-				<option value="2">Profesor</option>
-				<option value="3">Alumno</option>
-			</select>
 		</mat-form-field>
 		<mat-form-field class="example-full-width" appearance="fill">
 			<mat-label>Ingresar Contraseña</mat-label>
