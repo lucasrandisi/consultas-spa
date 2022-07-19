@@ -1,50 +1,59 @@
-.cabecera{
-    display: flex;
-    margin-top: 2em;
-    margin-bottom: 1em;
-    align-items: center;
-    
-    h1 {
-        justify-content:left;
-        font-size: 2vw;
-        padding-left: 25%;
-        margin-bottom: 0;
-    }
-
-    .agregar{
-        margin-left: 18%;
-        color: white;
-        background-color: #5fa1bd;
-    }
-}
-
-
 .container {
     display: flex;
     justify-content: center;
-    align-self: center;
-    
-    .mat-primary {
-        background-color: #5FA1BD;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+
+    .header {
+        position: relative;
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        h1 {
+            display: inline;
+            font-size: 2vw;
+            margin: 0;
+        }
+
+        .crear {
+            position: absolute;
+            right: 0;
+            width: 75px;
+            background-color: #5fa1bd;
+            color: white;
+        }
+
     }
-}
 
-table {
-    width: 50%;
-}
-
-@media (max-width: 680px) {
     table {
         width: 100%;
+
+        .mat-column-dia {
+            flex: 1;
+        }
+
+        .mat-column-hora {
+            flex: 2;
+        }
+
+        .mat-column-materia {
+            flex: 3;
+        }
+
+        .mat-column-inscriptos {
+            flex: 3;
+        }
+
+        .mat-column-accion {
+            flex: 3;
+        }
     }
-}
 
-
-td.mat-cell:first-of-type, th.mat-header-cell:first-of-type {
-    padding-left: 0 !important;
-}
-
-th.mat-header-cell:last-of-type, td.mat-cell:last-of-type {
-    padding-right: 0 !important;
-    width: 4vw;
+    .paginator {
+        align-self: end;
+    }
 }

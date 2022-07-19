@@ -1,12 +1,12 @@
-<div class="cabecera">
-	<h1>Listado de horarios disponibles</h1>
-	<button mat-raised-button class="agregar" color="primary" routerLink="./crear">Agregar</button>
-</div>
-
 <div class="container">
-	<table mat-table [dataSource]="horarios" *ngIf="horarios">
+    <div class="header">
+        <h1>Mis Horarios de Consulta</h1>
+        <button mat-raised-button class="crear" routerLink="./crear">Crear</button>
+    </div>
+
+	<table mat-table [dataSource]="dataSource" matSort>
 		<ng-container matColumnDef="dia">
-			<th mat-header-cell *matHeaderCellDef> Dia </th>
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>Dia </th>
 			<td mat-cell *matCellDef="let horario"> {{ horario.date_hour | date }} </td>
 		</ng-container>
 		<ng-container matColumnDef="hora">
@@ -14,8 +14,8 @@
 			<td mat-cell *matCellDef="let horario"> {{horario.date_hour | date: 'shortTime'}} </td>
 		</ng-container>
 		<ng-container matColumnDef="materia">
-			<th mat-header-cell *matHeaderCellDef class="max-width"> Materia </th>
-			<td mat-cell *matCellDef="let horario" class="max-width"> {{horario.materia.name}} </td>
+			<th mat-header-cell *matHeaderCellDef mat-sort-header> Materia </th>
+			<td mat-cell *matCellDef="let horario"> {{horario.materia.name}} </td>
 		</ng-container>
         <ng-container matColumnDef="inscriptos">
             <th mat-header-cell *matHeaderCellDef>Inscriptos </th>
@@ -29,7 +29,16 @@
 				</button>
 			</td>
 		</ng-container>
+
 		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 	</table>
+
+    <mat-paginator 
+        class="paginator"
+        #paginator
+        [pageSizeOptions]="[10, 20]"
+        showFirstLastButtons 
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
 </div>

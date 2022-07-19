@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { environment } from 'src/environments/environment';
 import { HorarioProfesor } from '../../horarioprofesor.entities';
 
@@ -11,41 +14,57 @@ import { HorarioProfesor } from '../../horarioprofesor.entities';
 })
 export class ListadoComponent implements OnInit {
     displayedColumns: string[] = ['dia', 'hora', 'materia', 'inscriptos', 'accion'];
-    horarios: HorarioProfesor[] = [];
-    idProfesor: string;
+    dataSource = new MatTableDataSource();
     status;
     errorMessage;
 
-    constructor(private route: ActivatedRoute,private http: HttpClient) { }
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
+
+    constructor(
+        private http: HttpClient,
+        private authService: AuthService
+    ) { }
 
     ngOnInit(): void {
-        this.idProfesor = this.route.snapshot.paramMap.get('id');
-        this.get_materias_profesor(this.idProfesor);
+        this.get_materias_profesor();
     }
 
-    get_materias_profesor(idProfesor:string){ 
-        this.http.get<HorarioProfesor[]>(`${environment.apiUrl}/horarios-consulta?filters[profesor_id]=${idProfesor}`).subscribe(datos => {
-        this.horarios = datos;
-        });
+    ngAfterViewInit(): void {
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+
+        this.dataSource.sortingDataAccessor = this.sortingDataAccesor;
+    }
+
+
+    sortingDataAccesor(row, sortHeaderId) {
+        switch (sortHeaderId) {
+            case 'dia': return row.date_hour;
+            case 'materia': return row.materia.name;
+            default: return row[sortHeaderId]
+        }
+    }
+
+    get_materias_profesor() { 
+        const idProfesor = this.authService.currentUser.id;
+
+        this.http.get<HorarioProfesor[]>(`${environment.apiUrl}/horarios-consulta?filters[profesor_id]=${idProfesor}`)
+            .subscribe(data => {
+                this.dataSource.data = data;
+            });
     }
 
     eliminar_materia(idMateria: number): void{
         this.http.delete(`${environment.apiUrl}/horarios-consulta/${idMateria}`).subscribe({
-        next: data => {
-            this.status = 'Eliminado satisfactorio';
-            console.log(this.status);
-            this.refresh();
-        },
-        error: error => {
-            this.errorMessage = error.message;
-            console.error('Hubo un error', error);
-        }
-    });
-    
+            next: data => {
+                this.status = 'Eliminado satisfactorio';
+                this.get_materias_profesor();
+            },
+            error: error => {
+                this.errorMessage = error.message;
+                console.error('Hubo un error', error);
+            }
+        });
     }
-
-    refresh(): void {
-        window.location.reload();
-    }
-
 }
