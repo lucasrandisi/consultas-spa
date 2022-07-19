@@ -37,7 +37,11 @@ export class CrearUsuarioComponent implements OnInit {
 		let name = this.form.value['name'];
 		let email = this.form.value['email'];
 		let password = this.form.value['password'];
-		let rol_id = this.form.value['rol'];
+        let rol_id = this.form.value['rol'];
+        
+        if (!this.form.valid) {
+            return;
+        }
 
 
 		this.http.post(`${environment.apiUrl}/users`, {
@@ -51,7 +55,10 @@ export class CrearUsuarioComponent implements OnInit {
                 this.router.navigate(['..'], { relativeTo: this.route });
             },
             error: (response) => {
-                this.error = response.error.message;
+                for (const error of Object.values(response.error.errors)) {
+                    this.error = error[0];
+                    return;
+                }
             }
         });
 	}
