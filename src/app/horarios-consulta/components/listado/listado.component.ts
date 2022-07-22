@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuthService } from 'src/app/shared/services/auth.service';
@@ -27,6 +28,7 @@ export class ListadoComponent implements OnInit {
         private http: HttpClient,
         private authService: AuthService,
         public dialog: MatDialog,
+        private _snackBar: MatSnackBar
     ) { }
 
     ngOnInit(): void {
@@ -68,7 +70,13 @@ export class ListadoComponent implements OnInit {
             if (result) {
                 this.http.delete(`${environment.apiUrl}/horarios-consulta/${idMateria}`).subscribe({
                     next: data => {
-                        this.status = 'Eliminado satisfactorio';
+                        this._snackBar.open('Consulta eliminada', 'Cerrar', {
+                            duration: 3000,
+                            verticalPosition: 'bottom',
+                            horizontalPosition: 'end',
+                            panelClass: ['success']
+                        });
+
                         this.get_materias_profesor();
                     },
                     error: error => {

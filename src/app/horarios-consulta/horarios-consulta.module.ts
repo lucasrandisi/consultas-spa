@@ -8,8 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
@@ -37,8 +36,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
-    
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class HorariosConsultaModule { }
