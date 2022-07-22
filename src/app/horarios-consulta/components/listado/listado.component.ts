@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { environment } from 'src/environments/environment';
 import { HorarioProfesor } from '../../horarioprofesor.entities';
+import { EliminarDialogComponent } from '../eliminar-dialog/eliminar-dialog.component';
 
 @Component({
   selector: 'app-listado',
@@ -23,7 +25,8 @@ export class ListadoComponent implements OnInit {
 
     constructor(
         private http: HttpClient,
-        private authService: AuthService
+        private authService: AuthService,
+        public dialog: MatDialog,
     ) { }
 
     ngOnInit(): void {
@@ -55,15 +58,24 @@ export class ListadoComponent implements OnInit {
             });
     }
 
+
     eliminar_materia(idMateria: number): void{
-        this.http.delete(`${environment.apiUrl}/horarios-consulta/${idMateria}`).subscribe({
-            next: data => {
-                this.status = 'Eliminado satisfactorio';
-                this.get_materias_profesor();
-            },
-            error: error => {
-                this.errorMessage = error.message;
-                console.error('Hubo un error', error);
+        const dialogRef = this.dialog.open(EliminarDialogComponent, {
+            width: '500px',
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.http.delete(`${environment.apiUrl}/horarios-consulta/${idMateria}`).subscribe({
+                    next: data => {
+                        this.status = 'Eliminado satisfactorio';
+                        this.get_materias_profesor();
+                    },
+                    error: error => {
+                        this.errorMessage = error.message;
+                        console.error('Hubo un error', error);
+                    }
+                });
             }
         });
     }

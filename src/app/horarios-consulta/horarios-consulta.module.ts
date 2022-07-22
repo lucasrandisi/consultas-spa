@@ -15,11 +15,14 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { EliminarDialogComponent } from './components/eliminar-dialog/eliminar-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     CrearHorarioconsultaComponent,
-    ListadoComponent
+    ListadoComponent,
+    EliminarDialogComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule
+    
   ]
 })
 export class HorariosConsultaModule { }

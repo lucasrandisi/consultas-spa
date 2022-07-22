@@ -1,0 +1,12 @@
+:host {
+    max-height: 20vh;
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: center;
+
+    .cancelar {
+        margin-right: 1.5rem;
+    }
+}
