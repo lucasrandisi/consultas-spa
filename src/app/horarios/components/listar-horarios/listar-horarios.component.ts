@@ -40,7 +40,6 @@ export class ListarHorariosComponent implements OnInit {
 
     openInscripcionDialog(horarioConsulta: HorarioConsulta): void {
         let dialogRef = this.dialog.open(InscripcionComponent, {
-            height: '260px',
             width: '500px',
             data: {
                 horarioConsulta: horarioConsulta
