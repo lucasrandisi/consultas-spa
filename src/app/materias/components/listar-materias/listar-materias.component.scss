@@ -30,3 +30,12 @@ table {
     }
 }
 
+:host::ng-deep {
+    .mat-form-field {
+        display: flex;
+        justify-content: center;
+    }
+    .mat-form-field-wrapper {
+        width: 50%;
+    }
+}

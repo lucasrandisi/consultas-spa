@@ -20,13 +20,9 @@ export class ListarMateriasComponent implements OnInit {
 
 	constructor(private http: HttpClient, private route: Router) { }
 
-
-
 	ngOnInit(): void {
-		this.dataSource = new MatTableDataSource(this.materias);
 		this.get_materias();
 	}
-
 
 	get_materias() {
 		this.http.get(`${environment.apiUrl}/materias`, {
@@ -39,6 +35,7 @@ export class ListarMateriasComponent implements OnInit {
 					new Materia(materia.id, materia.name)
 				);
 			}
+			this.dataSource = new MatTableDataSource(this.materias);
 		}
 		)
 	}
