@@ -1,18 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Horarios, Inscripcion } from './horarios.entities';
 import { environment } from 'src/environments/environment';
+import { Inscripcion } from '../../horarios.entities';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HorariosService {
+export class InscripcionService {
 
   constructor(private http: HttpClient) { }
 
-  getHorarios(idMateria: number): Observable<Horarios[]> {
-    return this.http.get<Horarios[]>(`${environment.apiUrl}/horarios-consulta?filters[materia_id]=${idMateria}`);
+  inscribirConsulta(inscripcion: Inscripcion): Observable<Inscripcion> {
+    return this.http.post<Inscripcion>(`${environment.apiUrl}/consultas`, inscripcion);
   }
-
 }
