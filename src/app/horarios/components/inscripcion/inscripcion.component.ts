@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Inscripcion } from '../../horarios.entities';
 import { HorarioConsulta } from '../listar-horarios/listar-horarios.component';
 import { InscripcionService } from './inscripcion.service';
@@ -18,7 +19,8 @@ export class InscripcionComponent implements OnInit {
     constructor(
         public dialogRef: MatDialogRef<InscripcionComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any,
-        private inscripcionService: InscripcionService
+        private inscripcionService: InscripcionService,
+        private _snackBar: MatSnackBar
     ) {
         this.horarioConsulta = data.horarioConsulta;
     }
@@ -38,7 +40,12 @@ export class InscripcionComponent implements OnInit {
                     this.dialogRef.close(data);
                 },
                 error: error => {
-                    console.error('Hubo un error', error.error.message);
+                    this._snackBar.open('Error al inscribirse en la consulta: ' + error.error.message, 'Cerrar', {
+                        duration: 5000,
+                        verticalPosition: 'bottom',
+                        horizontalPosition: 'end',
+                        panelClass: ['error']
+                    });
                 }
             });
         }

@@ -27,3 +27,12 @@
         color: #5FA1BD;
     }
 }
+
+::ng-deep snack-bar-container.error {
+    background-color: red;
+    color: #FFFFFF;
+}
+
+::ng-deep .mat-simple-snackbar-action {
+    color: #FFFFFF;
+}
