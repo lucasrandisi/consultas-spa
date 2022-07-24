@@ -48,8 +48,10 @@ export class ListarHorariosComponent implements OnInit {
 
         dialogRef.afterClosed().subscribe(response => {
             if (response) {
-                this._snackBar.open('Inscripto a horario de consulta', 'Cerrar', {
-                    duration: 3000,
+                const day = new Date(response.horario_consulta.date_hour);
+                this._snackBar.open('Inscripto a horario de consulta el dia ' + 
+                    day.getDate() + '/' + (day.getMonth() + 1) + ' a las ' + day.getHours() + ' hs', 'Cerrar', {
+                    duration: 5000,
                     verticalPosition: 'bottom',
                     horizontalPosition: 'end',
                     panelClass: ['success']
